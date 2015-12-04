@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32B16E0C1C117BD400865247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0B1C117BD400865247 /* main.m */; };
+		32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0E1C117BD400865247 /* AppDelegate.m */; };
+		32B16E121C117BD400865247 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E111C117BD400865247 /* FirstViewController.m */; };
+		32B16E151C117BD400865247 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E141C117BD400865247 /* SecondViewController.m */; };
+		32B16E181C117BD400865247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E161C117BD400865247 /* Main.storyboard */; };
+		32B16E1A1C117BD400865247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E191C117BD400865247 /* Assets.xcassets */; };
+		32B16E1D1C117BD400865247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E1B1C117BD400865247 /* LaunchScreen.storyboard */; };
+		32B16E281C117BD400865247 /* WoYaoFaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E271C117BD400865247 /* WoYaoFaTests.m */; };
+		32B16E331C117BD400865247 /* WoYaoFaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E321C117BD400865247 /* WoYaoFaUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32B16E241C117BD400865247 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32B16DFF1C117BD400865247 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32B16E061C117BD400865247;
+			remoteInfo = WoYaoFa;
+		};
+		32B16E2F1C117BD400865247 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32B16DFF1C117BD400865247 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32B16E061C117BD400865247;
+			remoteInfo = WoYaoFa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32B16E071C117BD400865247 /* WoYaoFa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoYaoFa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B16E0B1C117BD400865247 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32B16E0D1C117BD400865247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		32B16E0E1C117BD400865247 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		32B16E101C117BD400865247 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		32B16E111C117BD400865247 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		32B16E131C117BD400865247 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		32B16E141C117BD400865247 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		32B16E171C117BD400865247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32B16E191C117BD400865247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32B16E1C1C117BD400865247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32B16E1E1C117BD400865247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32B16E231C117BD400865247 /* WoYaoFaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoYaoFaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B16E271C117BD400865247 /* WoYaoFaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoYaoFaTests.m; sourceTree = "<group>"; };
+		32B16E291C117BD400865247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32B16E2E1C117BD400865247 /* WoYaoFaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoYaoFaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B16E321C117BD400865247 /* WoYaoFaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoYaoFaUITests.m; sourceTree = "<group>"; };
+		32B16E341C117BD400865247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32B16E041C117BD400865247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B16E201C117BD400865247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B16E2B1C117BD400865247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32B16DFE1C117BD400865247 = {
+			isa = PBXGroup;
+			children = (
+				32B16E091C117BD400865247 /* WoYaoFa */,
+				32B16E261C117BD400865247 /* WoYaoFaTests */,
+				32B16E311C117BD400865247 /* WoYaoFaUITests */,
+				32B16E081C117BD400865247 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32B16E081C117BD400865247 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32B16E071C117BD400865247 /* WoYaoFa.app */,
+				32B16E231C117BD400865247 /* WoYaoFaTests.xctest */,
+				32B16E2E1C117BD400865247 /* WoYaoFaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32B16E091C117BD400865247 /* WoYaoFa */ = {
+			isa = PBXGroup;
+			children = (
+				32B16E0D1C117BD400865247 /* AppDelegate.h */,
+				32B16E0E1C117BD400865247 /* AppDelegate.m */,
+				32B16E101C117BD400865247 /* FirstViewController.h */,
+				32B16E111C117BD400865247 /* FirstViewController.m */,
+				32B16E131C117BD400865247 /* SecondViewController.h */,
+				32B16E141C117BD400865247 /* SecondViewController.m */,
+				32B16E161C117BD400865247 /* Main.storyboard */,
+				32B16E191C117BD400865247 /* Assets.xcassets */,
+				32B16E1B1C117BD400865247 /* LaunchScreen.storyboard */,
+				32B16E1E1C117BD400865247 /* Info.plist */,
+				32B16E0A1C117BD400865247 /* Supporting Files */,
+			);
+			path = WoYaoFa;
+			sourceTree = "<group>";
+		};
+		32B16E0A1C117BD400865247 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32B16E0B1C117BD400865247 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32B16E261C117BD400865247 /* WoYaoFaTests */ = {
+			isa = PBXGroup;
+			children = (
+				32B16E271C117BD400865247 /* WoYaoFaTests.m */,
+				32B16E291C117BD400865247 /* Info.plist */,
+			);
+			path = WoYaoFaTests;
+			sourceTree = "<group>";
+		};
+		32B16E311C117BD400865247 /* WoYaoFaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				32B16E321C117BD400865247 /* WoYaoFaUITests.m */,
+				32B16E341C117BD400865247 /* Info.plist */,
+			);
+			path = WoYaoFaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32B16E061C117BD400865247 /* WoYaoFa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32B16E371C117BD400865247 /* Build configuration list for PBXNativeTarget "WoYaoFa" */;
+			buildPhases = (
+				32B16E031C117BD400865247 /* Sources */,
+				32B16E041C117BD400865247 /* Frameworks */,
+				32B16E051C117BD400865247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WoYaoFa;
+			productName = WoYaoFa;
+			productReference = 32B16E071C117BD400865247 /* WoYaoFa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32B16E221C117BD400865247 /* WoYaoFaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32B16E3A1C117BD400865247 /* Build configuration list for PBXNativeTarget "WoYaoFaTests" */;
+			buildPhases = (
+				32B16E1F1C117BD400865247 /* Sources */,
+				32B16E201C117BD400865247 /* Frameworks */,
+				32B16E211C117BD400865247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32B16E251C117BD400865247 /* PBXTargetDependency */,
+			);
+			name = WoYaoFaTests;
+			productName = WoYaoFaTests;
+			productReference = 32B16E231C117BD400865247 /* WoYaoFaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		32B16E2D1C117BD400865247 /* WoYaoFaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32B16E3D1C117BD400865247 /* Build configuration list for PBXNativeTarget "WoYaoFaUITests" */;
+			buildPhases = (
+				32B16E2A1C117BD400865247 /* Sources */,
+				32B16E2B1C117BD400865247 /* Frameworks */,
+				32B16E2C1C117BD400865247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32B16E301C117BD400865247 /* PBXTargetDependency */,
+			);
+			name = WoYaoFaUITests;
+			productName = WoYaoFaUITests;
+			productReference = 32B16E2E1C117BD400865247 /* WoYaoFaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32B16DFF1C117BD400865247 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Lin;
+				TargetAttributes = {
+					32B16E061C117BD400865247 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					32B16E221C117BD400865247 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 32B16E061C117BD400865247;
+					};
+					32B16E2D1C117BD400865247 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 32B16E061C117BD400865247;
+					};
+				};
+			};
+			buildConfigurationList = 32B16E021C117BD400865247 /* Build configuration list for PBXProject "WoYaoFa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32B16DFE1C117BD400865247;
+			productRefGroup = 32B16E081C117BD400865247 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32B16E061C117BD400865247 /* WoYaoFa */,
+				32B16E221C117BD400865247 /* WoYaoFaTests */,
+				32B16E2D1C117BD400865247 /* WoYaoFaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32B16E051C117BD400865247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32B16E1D1C117BD400865247 /* LaunchScreen.storyboard in Resources */,
+				32B16E1A1C117BD400865247 /* Assets.xcassets in Resources */,
+				32B16E181C117BD400865247 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B16E211C117BD400865247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B16E2C1C117BD400865247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32B16E031C117BD400865247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32B16E151C117BD400865247 /* SecondViewController.m in Sources */,
+				32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */,
+				32B16E121C117BD400865247 /* FirstViewController.m in Sources */,
+				32B16E0C1C117BD400865247 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B16E1F1C117BD400865247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32B16E281C117BD400865247 /* WoYaoFaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B16E2A1C117BD400865247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32B16E331C117BD400865247 /* WoYaoFaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32B16E251C117BD400865247 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32B16E061C117BD400865247 /* WoYaoFa */;
+			targetProxy = 32B16E241C117BD400865247 /* PBXContainerItemProxy */;
+		};
+		32B16E301C117BD400865247 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32B16E061C117BD400865247 /* WoYaoFa */;
+			targetProxy = 32B16E2F1C117BD400865247 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		32B16E161C117BD400865247 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32B16E171C117BD400865247 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		32B16E1B1C117BD400865247 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32B16E1C1C117BD400865247 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32B16E351C117BD400865247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		32B16E361C117BD400865247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32B16E381C117BD400865247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WoYaoFa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		32B16E391C117BD400865247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WoYaoFa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		32B16E3B1C117BD400865247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WoYaoFaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoYaoFa.app/WoYaoFa";
+			};
+			name = Debug;
+		};
+		32B16E3C1C117BD400865247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WoYaoFaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoYaoFa.app/WoYaoFa";
+			};
+			name = Release;
+		};
+		32B16E3E1C117BD400865247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WoYaoFaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WoYaoFa;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		32B16E3F1C117BD400865247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WoYaoFaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WoYaoFa;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32B16E021C117BD400865247 /* Build configuration list for PBXProject "WoYaoFa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32B16E351C117BD400865247 /* Debug */,
+				32B16E361C117BD400865247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32B16E371C117BD400865247 /* Build configuration list for PBXNativeTarget "WoYaoFa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32B16E381C117BD400865247 /* Debug */,
+				32B16E391C117BD400865247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		32B16E3A1C117BD400865247 /* Build configuration list for PBXNativeTarget "WoYaoFaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32B16E3B1C117BD400865247 /* Debug */,
+				32B16E3C1C117BD400865247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		32B16E3D1C117BD400865247 /* Build configuration list for PBXNativeTarget "WoYaoFaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32B16E3E1C117BD400865247 /* Debug */,
+				32B16E3F1C117BD400865247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32B16DFF1C117BD400865247 /* Project object */;
+}
