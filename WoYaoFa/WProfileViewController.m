@@ -9,6 +9,7 @@
 #import "WProfileViewController.h"
 #import "WAddressBookViewController.h"
 #import "WSettingViewController.h"
+#import "WAccount.h"
 
 @interface WProfileViewController ()
 
@@ -109,7 +110,11 @@
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
+        case 2:
+        {
             
+            break;
+        }
         default:
             break;
     }

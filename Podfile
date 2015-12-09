@@ -10,7 +10,8 @@ target 'WoYaoFa' do
   pod 'BFKit'
   pod 'MJRefresh'
   pod 'MJExtension'
-  pod 'MBProgressHUD'
+  pod 'MBProgressHUD', '~> 0.9.1'
+
 end
 
 target 'WoYaoFaTests' do
