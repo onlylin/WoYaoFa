@@ -11,6 +11,7 @@ target 'WoYaoFa' do
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'MBProgressHUD', '~> 0.9.1'
+  pod 'LBBlurredImage'
 
 end
 

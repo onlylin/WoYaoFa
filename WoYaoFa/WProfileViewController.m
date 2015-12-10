@@ -9,6 +9,7 @@
 #import "WProfileViewController.h"
 #import "WAddressBookViewController.h"
 #import "WSettingViewController.h"
+#import "WLoginNavigation.h"
 #import "WAccount.h"
 
 @interface WProfileViewController ()
@@ -31,6 +32,8 @@
     
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.profileHeadView;
+    
+    [self addRACsignal];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -126,6 +129,15 @@
     return YES;
 }
 
+
+#pragma mark - Private Method
+- (void)addRACsignal{
+    self.profileHeadView.settingButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        WLoginNavigation *loginNavigation = [[WLoginNavigation alloc] init];
+        [self presentViewController:loginNavigation animated:YES completion:nil];
+        return [RACSignal empty];
+    }];
+}
 
 /*
 #pragma mark - Navigation

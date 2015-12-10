@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WAddressBook.h"
 
 @interface WAddressBookView : UIView
 
@@ -24,6 +25,6 @@
 
 @property (nonatomic, strong) UIImageView *defaultImageView;
 
-- (id)initWithFrame:(CGRect)frame;
+- (id)initWithFrame:(CGRect)frame viewModel:(WAddressBook*)addressBook;;
 
 @end

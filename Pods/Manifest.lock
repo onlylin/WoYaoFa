@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - BFKit (1.8.0)
+  - LBBlurredImage (0.2.2)
   - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
   - MJExtension (3.0.7)
@@ -36,6 +37,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BFKit
+  - LBBlurredImage
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - MJExtension
@@ -45,6 +47,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BFKit: f9edb431d57bcd01568a5aebbfae2cd9976f03c2
+  LBBlurredImage: 700634c17922bc2d22343118e7deb6a3ca12db43
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJExtension: 290cc966f0f849b12b6391a38e296e0004ae8e5e

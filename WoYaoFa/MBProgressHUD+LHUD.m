@@ -51,7 +51,9 @@
  *  @param view 显示信息的视图
  */
 + (void)showTextOnly:(NSString *)text inView:(UIView *)view{
-    [self show:text icon:nil view:view];
+    if (text.length > 0) {
+        [self show:text icon:nil view:view];
+    }
 }
 
 /**
@@ -103,7 +105,7 @@
  */
 + (MBProgressHUD *)showMessage:(NSString *)message
 {
-    return [self showMessage:message toView:nil];
+    return [self showMessage:message inView:nil];
 }
 
 /**
@@ -114,7 +116,7 @@
  *
  *  @return 直接返回一个MBProgressHUD，需要手动关闭
  */
-+ (MBProgressHUD *)showMessage:(NSString *)message toView:(UIView *)view {
++ (MBProgressHUD *)showMessage:(NSString *)message inView:(UIView *)view {
     if (view == nil) view = [[UIApplication sharedApplication].windows lastObject];
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];

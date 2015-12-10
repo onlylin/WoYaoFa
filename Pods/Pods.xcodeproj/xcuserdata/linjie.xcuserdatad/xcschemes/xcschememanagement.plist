@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LBBlurredImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54940A8B7DB9AF0B0AA61044FC4E9388</key>
+		<key>785E456A4B5EC8A508CE868E04789C03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F6B1B257B9D16E4EFEC826DA9B7B657C</key>
+		<key>C11B3DECF6DF2CB6B455ABAAFB36FDF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAB8F38FE0C5672372995F06682A9F8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

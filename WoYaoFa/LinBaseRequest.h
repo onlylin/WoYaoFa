@@ -85,13 +85,6 @@ typedef NS_ENUM(NSInteger , LinRequestSerializerType) {
 - (id)jsonValidator;
 
 /**
- *  请求方式
- *
- *  @return
- */
-- (LinRequestMethod)requestMethod;
-
-/**
  *  请求的SerializerType
  *
  *  @return

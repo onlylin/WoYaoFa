@@ -41,6 +41,16 @@
 		328707CB1C156B900098296E /* WSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707CA1C156B900098296E /* WSettingView.m */; };
 		328707D51C1582F30098296E /* my_set_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328707D41C1582F30098296E /* my_set_up@2x.png */; };
 		328707D91C1584F20098296E /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707D81C1584F20098296E /* UIViewExt.m */; };
+		329315171C192588009AF33D /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315161C192588009AF33D /* bg.png */; };
+		3293151A1C1927B5009AF33D /* WLoginNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 329315191C1927B5009AF33D /* WLoginNavigation.m */; };
+		3293151D1C1930F6009AF33D /* WLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293151C1C1930F6009AF33D /* WLoginViewController.m */; };
+		329315241C193F15009AF33D /* registered_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315231C193F15009AF33D /* registered_phone@2x.png */; };
+		329315261C193F58009AF33D /* registered_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315251C193F58009AF33D /* registered_password@2x.png */; };
+		329315291C19447E009AF33D /* WRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 329315281C19447E009AF33D /* WRegisterViewController.m */; };
+		329315311C194E69009AF33D /* binding_validation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315301C194E69009AF33D /* binding_validation@2x.png */; };
+		329315331C194E91009AF33D /* binding_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315321C194E91009AF33D /* binding_phone@2x.png */; };
+		329315351C194EB8009AF33D /* registered_password_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315341C194EB8009AF33D /* registered_password_1@2x.png */; };
+		329315391C19547C009AF33D /* LCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 329315381C19547C009AF33D /* LCountDownButton.m */; };
 		32B16E0C1C117BD400865247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0B1C117BD400865247 /* main.m */; };
 		32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0E1C117BD400865247 /* AppDelegate.m */; };
 		32B16E181C117BD400865247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E161C117BD400865247 /* Main.storyboard */; };
@@ -54,6 +64,9 @@
 		32BB860D1C181093008016A4 /* MJExtnsionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB860C1C181093008016A4 /* MJExtnsionConfig.m */; };
 		32BB86111C1812AC008016A4 /* LDataResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB86101C1812AC008016A4 /* LDataResult.m */; };
 		32BB86151C181367008016A4 /* LPageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB86141C181367008016A4 /* LPageResult.m */; };
+		32BB86181C18164D008016A4 /* WUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB86171C18164D008016A4 /* WUser.m */; };
+		32BB861B1C181800008016A4 /* WAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB861A1C181800008016A4 /* WAddressBook.m */; };
+		32BB86201C181996008016A4 /* LinApiManager+AddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB861F1C181996008016A4 /* LinApiManager+AddressBook.m */; };
 		32C6B7AF1C13320F00A70EE1 /* my_opinion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B7AB1C13320F00A70EE1 /* my_opinion@2x.png */; };
 		32C6B7B01C13320F00A70EE1 /* my_order_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B7AC1C13320F00A70EE1 /* my_order_history@2x.png */; };
 		32C6B7B11C13320F00A70EE1 /* my_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B7AD1C13320F00A70EE1 /* my_phone@2x.png */; };
@@ -131,6 +144,20 @@
 		328707D41C1582F30098296E /* my_set_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_set_up@2x.png"; sourceTree = "<group>"; };
 		328707D71C1584F20098296E /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		328707D81C1584F20098296E /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		329315161C192588009AF33D /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		329315181C1927B5009AF33D /* WLoginNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLoginNavigation.h; sourceTree = "<group>"; };
+		329315191C1927B5009AF33D /* WLoginNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLoginNavigation.m; sourceTree = "<group>"; };
+		3293151B1C1930F6009AF33D /* WLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLoginViewController.h; sourceTree = "<group>"; };
+		3293151C1C1930F6009AF33D /* WLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLoginViewController.m; sourceTree = "<group>"; };
+		329315231C193F15009AF33D /* registered_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registered_phone@2x.png"; sourceTree = "<group>"; };
+		329315251C193F58009AF33D /* registered_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registered_password@2x.png"; sourceTree = "<group>"; };
+		329315271C19447E009AF33D /* WRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRegisterViewController.h; sourceTree = "<group>"; };
+		329315281C19447E009AF33D /* WRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRegisterViewController.m; sourceTree = "<group>"; };
+		329315301C194E69009AF33D /* binding_validation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "binding_validation@2x.png"; sourceTree = "<group>"; };
+		329315321C194E91009AF33D /* binding_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "binding_phone@2x.png"; sourceTree = "<group>"; };
+		329315341C194EB8009AF33D /* registered_password_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registered_password_1@2x.png"; sourceTree = "<group>"; };
+		329315371C19547C009AF33D /* LCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCountDownButton.h; sourceTree = "<group>"; };
+		329315381C19547C009AF33D /* LCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCountDownButton.m; sourceTree = "<group>"; };
 		32B16E071C117BD400865247 /* WoYaoFa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoYaoFa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B16E0B1C117BD400865247 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32B16E0D1C117BD400865247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +183,12 @@
 		32BB86101C1812AC008016A4 /* LDataResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDataResult.m; sourceTree = "<group>"; };
 		32BB86131C181367008016A4 /* LPageResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPageResult.h; sourceTree = "<group>"; };
 		32BB86141C181367008016A4 /* LPageResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPageResult.m; sourceTree = "<group>"; };
+		32BB86161C18164D008016A4 /* WUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUser.h; sourceTree = "<group>"; };
+		32BB86171C18164D008016A4 /* WUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUser.m; sourceTree = "<group>"; };
+		32BB86191C181800008016A4 /* WAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAddressBook.h; sourceTree = "<group>"; };
+		32BB861A1C181800008016A4 /* WAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAddressBook.m; sourceTree = "<group>"; };
+		32BB861E1C181996008016A4 /* LinApiManager+AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+AddressBook.h"; sourceTree = "<group>"; };
+		32BB861F1C181996008016A4 /* LinApiManager+AddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+AddressBook.m"; sourceTree = "<group>"; };
 		32C6B7AB1C13320F00A70EE1 /* my_opinion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_opinion@2x.png"; sourceTree = "<group>"; };
 		32C6B7AC1C13320F00A70EE1 /* my_order_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_order_history@2x.png"; sourceTree = "<group>"; };
 		32C6B7AD1C13320F00A70EE1 /* my_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_phone@2x.png"; sourceTree = "<group>"; };
@@ -215,6 +248,8 @@
 				3273B7F91C12721200597049 /* WOrderNavigation.m */,
 				3273B7FB1C12722E00597049 /* WProfileNavigation.h */,
 				3273B7FC1C12722E00597049 /* WProfileNavigation.m */,
+				329315181C1927B5009AF33D /* WLoginNavigation.h */,
+				329315191C1927B5009AF33D /* WLoginNavigation.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -256,6 +291,7 @@
 		3273B7F61C1271DE00597049 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				329315121C19208D009AF33D /* LoginAndRegister */,
 				328707C41C15694F0098296E /* Setting */,
 				328707A51C15244E0098296E /* AddressBook */,
 				3273B7F71C1271E900597049 /* RootView */,
@@ -275,6 +311,8 @@
 		3273B7FE1C127F5500597049 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				329315161C192588009AF33D /* bg.png */,
+				329315221C193E35009AF33D /* LoginAndRegister */,
 				32C6B7A91C13318500A70EE1 /* Profile */,
 				3273B7FF1C127F5B00597049 /* Tabbar */,
 			);
@@ -365,6 +403,7 @@
 		328707B41C1529B70098296E /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				329315361C195464009AF33D /* Button */,
 				328707B81C1529FA0098296E /* Label */,
 			);
 			name = Widget;
@@ -413,6 +452,38 @@
 				328707D81C1584F20098296E /* UIViewExt.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		329315121C19208D009AF33D /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				3293151B1C1930F6009AF33D /* WLoginViewController.h */,
+				3293151C1C1930F6009AF33D /* WLoginViewController.m */,
+				329315271C19447E009AF33D /* WRegisterViewController.h */,
+				329315281C19447E009AF33D /* WRegisterViewController.m */,
+			);
+			name = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		329315221C193E35009AF33D /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				329315341C194EB8009AF33D /* registered_password_1@2x.png */,
+				329315321C194E91009AF33D /* binding_phone@2x.png */,
+				329315301C194E69009AF33D /* binding_validation@2x.png */,
+				329315231C193F15009AF33D /* registered_phone@2x.png */,
+				329315251C193F58009AF33D /* registered_password@2x.png */,
+			);
+			name = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		329315361C195464009AF33D /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				329315371C19547C009AF33D /* LCountDownButton.h */,
+				329315381C19547C009AF33D /* LCountDownButton.m */,
+			);
+			name = Button;
 			sourceTree = "<group>";
 		};
 		32B16DFE1C117BD400865247 = {
@@ -517,6 +588,23 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		32BB861C1C18196C008016A4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				32BB861D1C181976008016A4 /* AddressBook */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		32BB861D1C181976008016A4 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				32BB861E1C181996008016A4 /* LinApiManager+AddressBook.h */,
+				32BB861F1C181996008016A4 /* LinApiManager+AddressBook.m */,
+			);
+			name = AddressBook;
+			sourceTree = "<group>";
+		};
 		32C6B7A91C13318500A70EE1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +641,7 @@
 		32F332631C117E49003C7799 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32BB861C1C18196C008016A4 /* Profile */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -564,6 +653,10 @@
 				32BB860A1C181078008016A4 /* Config */,
 				32BB86071C180E9D008016A4 /* WAccount.h */,
 				32BB86081C180E9D008016A4 /* WAccount.m */,
+				32BB86161C18164D008016A4 /* WUser.h */,
+				32BB86171C18164D008016A4 /* WUser.m */,
+				32BB86191C181800008016A4 /* WAddressBook.h */,
+				32BB861A1C181800008016A4 /* WAddressBook.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -726,6 +819,9 @@
 				32B16E1D1C117BD400865247 /* LaunchScreen.storyboard in Resources */,
 				32C6B7B81C13337800A70EE1 /* my_address_book@2x.png in Resources */,
 				32B16E1A1C117BD400865247 /* Assets.xcassets in Resources */,
+				329315331C194E91009AF33D /* binding_phone@2x.png in Resources */,
+				329315311C194E69009AF33D /* binding_validation@2x.png in Resources */,
+				329315351C194EB8009AF33D /* registered_password_1@2x.png in Resources */,
 				3273B8201C12800500597049 /* my_choose@3x.png in Resources */,
 				32C6B7B91C13337800A70EE1 /* my_collection@2x.png in Resources */,
 				3273B81C1C12800500597049 /* house_choose@2x.png in Resources */,
@@ -743,11 +839,14 @@
 				3273B80C1C127F7800597049 /* my_not_choose.png in Resources */,
 				32C6B7B01C13320F00A70EE1 /* my_order_history@2x.png in Resources */,
 				328707D51C1582F30098296E /* my_set_up@2x.png in Resources */,
+				329315171C192588009AF33D /* bg.png in Resources */,
 				3273B80E1C127F7800597049 /* my_not_choose@3x.png in Resources */,
 				3273B8211C12800500597049 /* order_choose.png in Resources */,
+				329315261C193F58009AF33D /* registered_password@2x.png in Resources */,
 				3273B8091C127F7800597049 /* house_not_choose.png in Resources */,
 				3273B80A1C127F7800597049 /* house_not_choose@2x.png in Resources */,
 				3273B8221C12800500597049 /* order_choose@2x.png in Resources */,
+				329315241C193F15009AF33D /* registered_phone@2x.png in Resources */,
 				3273B80D1C127F7800597049 /* my_not_choose@2x.png in Resources */,
 				3273B80F1C127F7800597049 /* order_not_choose.png in Resources */,
 				3273B81B1C12800500597049 /* house_choose.png in Resources */,
@@ -829,6 +928,8 @@
 				328707AE1C1525510098296E /* WAddressBookView.m in Sources */,
 				32FA531F1C11C6AA003741E7 /* LinNetworkPrivate.m in Sources */,
 				32F3326C1C118525003C7799 /* LinBaseRequest.m in Sources */,
+				32BB86201C181996008016A4 /* LinApiManager+AddressBook.m in Sources */,
+				3293151A1C1927B5009AF33D /* WLoginNavigation.m in Sources */,
 				3273B7F51C1271D900597049 /* WProfileViewController.m in Sources */,
 				3273B7ED1C12718000597049 /* WHomeViewController.m in Sources */,
 				32F332691C11847D003C7799 /* LinNetworkAgent.m in Sources */,
@@ -836,18 +937,23 @@
 				328707D91C1584F20098296E /* UIViewExt.m in Sources */,
 				32BB860D1C181093008016A4 /* MJExtnsionConfig.m in Sources */,
 				3273B7E81C12714300597049 /* WHomeNavigation.m in Sources */,
+				32BB86181C18164D008016A4 /* WUser.m in Sources */,
+				329315291C19447E009AF33D /* WRegisterViewController.m in Sources */,
 				32FA53251C11D0C6003741E7 /* LinApiManager.m in Sources */,
 				3273B7FA1C12721200597049 /* WOrderNavigation.m in Sources */,
 				328707B31C1526E00098296E /* UILabel+LLabel.m in Sources */,
 				3273B7FD1C12722E00597049 /* WProfileNavigation.m in Sources */,
+				329315391C19547C009AF33D /* LCountDownButton.m in Sources */,
 				3273B7F21C1271A300597049 /* WOrderViewController.m in Sources */,
 				328707CB1C156B900098296E /* WSettingView.m in Sources */,
+				3293151D1C1930F6009AF33D /* WLoginViewController.m in Sources */,
 				32BB86151C181367008016A4 /* LPageResult.m in Sources */,
 				328707B71C1529F00098296E /* LLabel.m in Sources */,
 				32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */,
 				328707C71C15696E0098296E /* WSettingViewController.m in Sources */,
 				32BB86111C1812AC008016A4 /* LDataResult.m in Sources */,
 				32B16E0C1C117BD400865247 /* main.m in Sources */,
+				32BB861B1C181800008016A4 /* WAddressBook.m in Sources */,
 				32C7AE071C13F12400B547D4 /* WProfileHeaderView.m in Sources */,
 				328707A81C1524800098296E /* WAddressBookViewController.m in Sources */,
 			);
@@ -991,6 +1097,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WoYaoFa/woyaofa-prefix.pch";
 				INFOPLIST_FILE = WoYaoFa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1004,6 +1111,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WoYaoFa/woyaofa-prefix.pch";
 				INFOPLIST_FILE = WoYaoFa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihucong.WoYaoFa;
 				PRODUCT_NAME = "$(TARGET_NAME)";

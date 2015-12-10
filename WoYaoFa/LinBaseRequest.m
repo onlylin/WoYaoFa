@@ -40,15 +40,15 @@
 }
 
 - (id)responseJSONObject{
-    return self.responseJSONObject;
+    return self.requestOperation.responseObject;
 }
 
 - (NSString*)responseString{
-    return self.responseString;
+    return self.requestOperation.responseString;
 }
 
 - (NSDictionary*)responseHeaders{
-    return self.responseHeaders;
+    return self.requestOperation.response.allHeaderFields;
 }
 
 - (BOOL)statusCodeValidator{
@@ -64,21 +64,12 @@
     return nil;
 }
 
-- (LinRequestMethod)requestMethod{
-    return self.requestMethod;
-}
 
 - (LinRequestSerializerType)requestSerializerType{
     return LinRequestSerializerTypeHTTP;
 }
 
-- (id)arguments{
-    return self.arguments;
-}
 
-- (NSString*)url{
-    return self.url;
-}
 
 - (NSTimeInterval)requestTimeoutInterval{
     return 60;

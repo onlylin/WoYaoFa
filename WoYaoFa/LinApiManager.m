@@ -36,6 +36,7 @@
  *  @param failure 请求失败回调
  */
 - (void)sendGet:(NSString *)url params:(id)params success:(void (^)(LinBaseRequest *))success failure:(void (^)(LinBaseRequest *))failure{
+    NSLog(@"发送GET请求");
     LinBaseRequest *request = [[LinBaseRequest alloc] init];
     request.url = url;
     request.arguments = params;

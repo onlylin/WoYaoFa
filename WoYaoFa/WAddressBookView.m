@@ -14,7 +14,7 @@
 @implementation WAddressBookView
 
 
-- (id)initWithFrame:(CGRect)frame{
+- (id)initWithFrame:(CGRect)frame viewModel:(WAddressBook *)addressBook{
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.nameView];
@@ -30,6 +30,10 @@
         
         [self.addressView addSubview:self.addressLabel];
         [self.addressView addSubview:self.address];
+        
+        self.name.text = addressBook.name;
+        self.phone.text = addressBook.phone;
+        self.address.text = [NSString stringWithFormat:@"%@%@%@%@%@",addressBook.province,addressBook.city,addressBook.district,addressBook.street,addressBook.detail];
         
         self.backgroundColor = VIEW_BG;
     }
@@ -84,7 +88,7 @@
         make.height.mas_equalTo(self.nameView.mas_height);
         make.right.mas_offset(0);
     }];
-    self.name.text = @"小明";
+//    self.name.text = @"小明";
     
     [self.phone mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(0);
@@ -92,7 +96,7 @@
         make.height.mas_equalTo(self.phoneView.mas_height);
         make.right.mas_offset(0);
     }];
-    self.phone.text = @"15157119546";
+//    self.phone.text = @"15157119546";
     
     [self.addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(10);
@@ -108,7 +112,7 @@
         make.left.equalTo(self.addressLabel.mas_right);
         make.right.mas_offset(-20);
     }];
-    self.address.text = @"石家庄市裕华区建设大街与二环交叉口润丰物流园A排001号";
+//    self.address.text = @"石家庄市裕华区建设大街与二环交叉口润丰物流园A排001号";
 }
 
 #pragma mark - Getter and Setter
