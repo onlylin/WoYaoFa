@@ -7,6 +7,7 @@
 //
 
 #import "WRegisterViewController.h"
+#import "LinApiManager+LoginAndRegister.h"
 
 @interface WRegisterViewController ()
 
@@ -39,16 +40,16 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    @weakify(self)
     [self.codeButton addTouchHandle:^(LCountDownButton *countDownButton, NSInteger tag) {
-        [countDownButton startWithTimeInterval:60];
-        
-        [countDownButton didChange:^NSString *(LCountDownButton *countDownButton, NSTimeInterval timeInterval) {
-            NSString *title = [NSString stringWithFormat:@"(%ld秒)重新获取",(long)timeInterval];
-            return title;
-        }];
-        
-        [countDownButton didFinished:^NSString *(LCountDownButton *countDownButton, NSTimeInterval timeInterval) {
-           return @"获取验证码";
+        @strongify(self)
+        RACSignal *signal = [[LinApiManager shareInstance] validPhone:self.phoneField.text];
+        [[signal filter:^BOOL(LDataResult *dataResult) {
+            [MBProgressHUD showTextOnly:dataResult.msg];
+            return dataResult.code == ResponseStatusOk;
+        }] subscribeNext:^(id x) {
+            //获取验证码
+            [self getVerificationCode:countDownButton tag:tag];
         }];
     }];
 }
@@ -142,8 +143,58 @@
                             self.codeButton.alpha = 0.5 + [enabled integerValue];
                             return enabled;
                         }];
+    
+    self.registerButton.rac_command = [[RACCommand alloc]
+                initWithEnabled:[RACSignal
+                                   combineLatest:@[
+                                        self.phoneField.rac_textSignal,
+                                        self.codeField.rac_textSignal,
+                                        self.passwordField.rac_textSignal,
+                                        self.checkPwdField.rac_textSignal,
+                                    ] reduce:^id(NSString *phone, NSString *code, NSString *password, NSString *checkPwd){
+                                        NSNumber *enabled = @(phone.length == 11 && code.length == 4 && password.length >= 6 && [password isEqualToString:checkPwd]);
+                                        self.registerButton.alpha = 0.5 + [enabled integerValue];
+                                        return enabled;
+                                    }]
+                signalBlock:^RACSignal *(id input) {
+                    WAccount *account = [[WAccount alloc] init];
+                    account.name = self.phoneField.text;
+                    account.password = self.passwordField.text.MD5;
+                    return [[LinApiManager shareInstance] registerAccount:account code:self.codeField.text appkey:MOB_SMS_APPKEY];
+                }];
+    
+    [self.registerButton.rac_command.executionSignals subscribeNext:^(RACSignal *signal) {
+       [[signal filter:^BOOL(LDataResult *dataResult) {
+           [MBProgressHUD showTextOnly:dataResult.msg];
+           return dataResult.code == ResponseStatusOk;
+       }] subscribeNext:^(id x) {
+          
+       }];
+    }];
 }
 
+- (void)getVerificationCode:(LCountDownButton*)button tag:(NSInteger)tag{
+    [MBProgressHUD showMessage:@"获取验证码..."];
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneField.text zone:@"+86" customIdentifier:nil result:^(NSError *error) {
+        [MBProgressHUD hideHUD];
+        if (!error) {
+            [MBProgressHUD showSuccess:@"验证码已发送"];
+            
+            [button startWithTimeInterval:60];
+            
+            [button didChange:^NSString *(LCountDownButton *countDownButton, NSTimeInterval timeInterval) {
+                NSString *title = [NSString stringWithFormat:@"(%ld秒)重新获取",(long)timeInterval];
+                return title;
+            }];
+            
+            [button didFinished:^NSString *(LCountDownButton *countDownButton, NSTimeInterval timeInterval) {
+                return @"获取验证码";
+            }];
+        }else{
+            [MBProgressHUD showError:@"验证码发送失败"];
+        }
+    }];
+}
 /*
 #pragma mark - Navigation
 

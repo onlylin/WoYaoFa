@@ -9,6 +9,7 @@
 #import "WLoginViewController.h"
 #import "UIImageView+LBBlurredImage.h"
 #import "WRegisterViewController.h"
+#import "LinApiManager+LoginAndRegister.h"
 
 @interface WLoginViewController ()
 
@@ -93,6 +94,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Event Response
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+}
+
 
 #pragma mark - Private Method
 - (void)addRACSiganl{
@@ -100,6 +107,32 @@
         WRegisterViewController *viewController = [[WRegisterViewController alloc] init];
         [self.navigationController pushViewController:viewController animated:YES];
         return [RACSignal empty];
+    }];
+    
+    self.loginButton.rac_command = [[RACCommand alloc]
+                        initWithEnabled:[RACSignal
+                                         combineLatest:@[
+                                            self.usernameField.rac_textSignal,
+                                            self.passwordField.rac_textSignal
+                                         ] reduce:^id(NSString *username,NSString *password){
+                                             NSNumber *enabled = @(username.length > 0 && password.length >= 6);
+                                             self.loginButton.alpha = 0.5 + [enabled integerValue];
+                                             return enabled;
+                                         }]
+                        signalBlock:^RACSignal *(id input) {
+                            return [[LinApiManager shareInstance] signIn:self.usernameField.text password:self.passwordField.text.MD5];
+                        }];
+    
+    [self.loginButton.rac_command.executionSignals subscribeNext:^(RACSignal *signal) {
+        [[[signal filter:^BOOL(LDataResult *dataResult) {
+            [MBProgressHUD showTextOnly:dataResult.msg];
+            return dataResult.code == ResponseStatusOk;
+        }] map:^id(LDataResult *dataResult) {
+            NSLog(@"%@",dataResult.datas);
+            return [WAccount mj_objectWithKeyValues:dataResult.datas];
+        }] subscribeNext:^(WAccount *account) {
+            NSLog(@"%@",account.name);
+        }];
     }];
 }
 /*
@@ -133,6 +166,7 @@
         }];
         _usernameField.leftView = view;
         _usernameField.leftViewMode = UITextFieldViewModeAlways;
+        _usernameField.textColor = [UIColor whiteColor];
     }
     return _usernameField;
 }
@@ -158,6 +192,7 @@
         }];
         _passwordField.leftView = view;
         _passwordField.leftViewMode = UITextFieldViewModeAlways;
+        _passwordField.textColor = [UIColor whiteColor];
     }
     return _passwordField;
 }

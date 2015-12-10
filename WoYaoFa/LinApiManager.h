@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "LinNetwork.h"
 
+typedef NS_ENUM(NSInteger,ResponseStatus) {
+    ResponseStatusOk = 2000,
+    ResponseStatusFail = 2001
+};
+
 @interface LinApiManager : NSObject
 
 @property (nonatomic, copy) void (^successBlock)(LinBaseRequest *);

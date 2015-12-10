@@ -51,6 +51,14 @@
 		329315331C194E91009AF33D /* binding_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315321C194E91009AF33D /* binding_phone@2x.png */; };
 		329315351C194EB8009AF33D /* registered_password_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315341C194EB8009AF33D /* registered_password_1@2x.png */; };
 		329315391C19547C009AF33D /* LCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 329315381C19547C009AF33D /* LCountDownButton.m */; };
+		329315401C19620C009AF33D /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3293153B1C19620C009AF33D /* SMS_SDKLocalizable.strings */; };
+		329315411C19620C009AF33D /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3293153D1C19620C009AF33D /* MOBFoundation.framework */; };
+		329315421C19620C009AF33D /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3293153E1C19620C009AF33D /* SMS_SDK.framework */; };
+		329315441C1962A0009AF33D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 329315431C1962A0009AF33D /* libicucore.tbd */; };
+		329315461C1962A9009AF33D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 329315451C1962A9009AF33D /* libz.tbd */; };
+		329315481C1962B5009AF33D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329315471C1962B5009AF33D /* JavaScriptCore.framework */; };
+		3293154A1C1962BF009AF33D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 329315491C1962BF009AF33D /* libstdc++.tbd */; };
+		3293154E1C196573009AF33D /* LinApiManager+LoginAndRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293154D1C196573009AF33D /* LinApiManager+LoginAndRegister.m */; };
 		32B16E0C1C117BD400865247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0B1C117BD400865247 /* main.m */; };
 		32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0E1C117BD400865247 /* AppDelegate.m */; };
 		32B16E181C117BD400865247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E161C117BD400865247 /* Main.storyboard */; };
@@ -158,6 +166,17 @@
 		329315341C194EB8009AF33D /* registered_password_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registered_password_1@2x.png"; sourceTree = "<group>"; };
 		329315371C19547C009AF33D /* LCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCountDownButton.h; sourceTree = "<group>"; };
 		329315381C19547C009AF33D /* LCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCountDownButton.m; sourceTree = "<group>"; };
+		3293153C1C19620C009AF33D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		3293153D1C19620C009AF33D /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		3293153E1C19620C009AF33D /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		3293153F1C19620C009AF33D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		329315431C1962A0009AF33D /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		329315451C1962A9009AF33D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		329315471C1962B5009AF33D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		329315491C1962BF009AF33D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		3293154C1C196573009AF33D /* LinApiManager+LoginAndRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+LoginAndRegister.h"; sourceTree = "<group>"; };
+		3293154D1C196573009AF33D /* LinApiManager+LoginAndRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+LoginAndRegister.m"; sourceTree = "<group>"; };
+		329315501C197111009AF33D /* WNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WNotification.h; sourceTree = "<group>"; };
 		32B16E071C117BD400865247 /* WoYaoFa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoYaoFa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B16E0B1C117BD400865247 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32B16E0D1C117BD400865247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -218,6 +237,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3293154A1C1962BF009AF33D /* libstdc++.tbd in Frameworks */,
+				329315481C1962B5009AF33D /* JavaScriptCore.framework in Frameworks */,
+				329315461C1962A9009AF33D /* libz.tbd in Frameworks */,
+				329315441C1962A0009AF33D /* libicucore.tbd in Frameworks */,
+				329315421C19620C009AF33D /* SMS_SDK.framework in Frameworks */,
+				329315411C19620C009AF33D /* MOBFoundation.framework in Frameworks */,
 				298558AB1202074366CB41CD /* libPods-WoYaoFa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +409,7 @@
 		328707AF1C1526B60098296E /* Extends */ = {
 			isa = PBXGroup;
 			children = (
+				3293154F1C1970ED009AF33D /* Header */,
 				328707B41C1529B70098296E /* Widget */,
 				328707B01C1526BE0098296E /* Categories */,
 			);
@@ -484,6 +510,33 @@
 				329315381C19547C009AF33D /* LCountDownButton.m */,
 			);
 			name = Button;
+			sourceTree = "<group>";
+		};
+		3293153A1C19620C009AF33D /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3293153B1C19620C009AF33D /* SMS_SDKLocalizable.strings */,
+				3293153D1C19620C009AF33D /* MOBFoundation.framework */,
+				3293153E1C19620C009AF33D /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		3293154B1C19655F009AF33D /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				3293154C1C196573009AF33D /* LinApiManager+LoginAndRegister.h */,
+				3293154D1C196573009AF33D /* LinApiManager+LoginAndRegister.m */,
+			);
+			name = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		3293154F1C1970ED009AF33D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				329315501C197111009AF33D /* WNotification.h */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 		32B16DFE1C117BD400865247 = {
@@ -591,6 +644,7 @@
 		32BB861C1C18196C008016A4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3293154B1C19655F009AF33D /* LoginAndRegister */,
 				32BB861D1C181976008016A4 /* AddressBook */,
 			);
 			name = Profile;
@@ -664,6 +718,7 @@
 		32F332651C117E82003C7799 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				3293153A1C19620C009AF33D /* SMS_SDK */,
 				32F332661C118397003C7799 /* Network */,
 			);
 			name = Vendors;
@@ -696,6 +751,10 @@
 		385E2B46F96C57D969CC82AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				329315491C1962BF009AF33D /* libstdc++.tbd */,
+				329315471C1962B5009AF33D /* JavaScriptCore.framework */,
+				329315451C1962A9009AF33D /* libz.tbd */,
+				329315431C1962A0009AF33D /* libicucore.tbd */,
 				80D05CAFA9B83E73D7012224 /* libPods-WoYaoFa.a */,
 			);
 			name = Frameworks;
@@ -798,6 +857,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 32B16DFE1C117BD400865247;
 			productRefGroup = 32B16E081C117BD400865247 /* Products */;
@@ -832,6 +892,7 @@
 				3273B8231C12800500597049 /* order_choose@3x.png in Resources */,
 				32B16E181C117BD400865247 /* Main.storyboard in Resources */,
 				3273B80B1C127F7800597049 /* house_not_choose@3x.png in Resources */,
+				329315401C19620C009AF33D /* SMS_SDKLocalizable.strings in Resources */,
 				328707C31C1568650098296E /* my_address_book_default@2x.png in Resources */,
 				3273B81E1C12800500597049 /* my_choose.png in Resources */,
 				3273B8111C127F7800597049 /* order_not_choose@3x.png in Resources */,
@@ -937,6 +998,7 @@
 				328707D91C1584F20098296E /* UIViewExt.m in Sources */,
 				32BB860D1C181093008016A4 /* MJExtnsionConfig.m in Sources */,
 				3273B7E81C12714300597049 /* WHomeNavigation.m in Sources */,
+				3293154E1C196573009AF33D /* LinApiManager+LoginAndRegister.m in Sources */,
 				32BB86181C18164D008016A4 /* WUser.m in Sources */,
 				329315291C19447E009AF33D /* WRegisterViewController.m in Sources */,
 				32FA53251C11D0C6003741E7 /* LinApiManager.m in Sources */,
@@ -991,6 +1053,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3293153B1C19620C009AF33D /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3293153C1C19620C009AF33D /* en */,
+				3293153F1C19620C009AF33D /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		32B16E161C117BD400865247 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1095,6 +1166,10 @@
 			baseConfigurationReference = C77E20BC66631F70106F6E3F /* Pods-WoYaoFa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WoYaoFa/SMS_SDK",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WoYaoFa/woyaofa-prefix.pch";
 				INFOPLIST_FILE = WoYaoFa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1109,6 +1184,10 @@
 			baseConfigurationReference = C0F340910DBF8DF3B8ED5DBB /* Pods-WoYaoFa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WoYaoFa/SMS_SDK",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WoYaoFa/woyaofa-prefix.pch";
 				INFOPLIST_FILE = WoYaoFa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
