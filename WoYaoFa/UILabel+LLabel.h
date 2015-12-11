@@ -10,10 +10,11 @@
 
 @interface UILabel (LLabel)
 
-- (void)textUpdateWidth:(NSString*)text;
 
-- (void)textUpdateHight:(NSString*)text;
+@property (nonatomic, strong) NSString *textUpdateWidth;
 
-- (void)textUpdateSize:(NSString*)text;
+@property (nonatomic, strong) NSString *textUpdateHight;
+
+@property (nonatomic, strong) NSString *textUpdateSize;
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WOrderViewController.h"
+#import "WOrdersViewController.h"
 
 @interface WOrderNavigation : UINavigationController
 
-@property (nonatomic, strong) WOrderViewController *orderViewController;
+@property (nonatomic, strong) WOrdersViewController *ordersViewController;
 
 @end

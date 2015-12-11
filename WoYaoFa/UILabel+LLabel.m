@@ -10,19 +10,31 @@
 
 @implementation UILabel (LLabel)
 
-- (void)textUpdateHight:(NSString *)text{
-    self.text = text;
+- (void)setTextUpdateHight:(NSString *)textUpdateHight{
+    self.text = textUpdateHight;
     self.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, [self contentSize].height);
 }
 
-- (void)textUpdateWidth:(NSString *)text{
-    self.text = text;
+- (void)setTextUpdateWidth:(NSString *)textUpdateWidth{
+    self.text = textUpdateWidth;
     self.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, [self contentSize].width, self.bounds.size.height);
 }
 
-- (void)textUpdateSize:(NSString *)text{
-    self.text = text;
+- (void)setTextUpdateSize:(NSString *)textUpdateSize{
+    self.text = textUpdateSize;
     self.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, [self contentSize].width, [self contentSize].height);
+}
+
+- (NSString*)textUpdateHight{
+    return self.text;
+}
+
+- (NSString*)textUpdateWidth{
+    return self.text;
+}
+
+- (NSString*)textUpdateSize{
+    return self.text;
 }
 
 - (CGSize)contentSize {

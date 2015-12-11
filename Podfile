@@ -12,7 +12,8 @@ target 'WoYaoFa' do
   pod 'MJExtension'
   pod 'MBProgressHUD', '~> 0.9.1'
   pod 'LBBlurredImage'
-
+  pod 'HMSegmentedControl'
+  pod 'YLMoment'
 end
 
 target 'WoYaoFaTests' do

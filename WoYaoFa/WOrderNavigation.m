@@ -23,7 +23,7 @@
     //设置文本颜色
     [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
-    [self pushViewController:self.orderViewController animated:YES];
+    [self pushViewController:self.ordersViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,11 +41,11 @@
 }
 */
 #pragma mark - Getter and Setter
-- (WOrderViewController*)orderViewController{
-    if (_orderViewController == nil) {
-        _orderViewController = [[WOrderViewController alloc] init];
+- (WOrdersViewController*)ordersViewController{
+    if (_ordersViewController == nil) {
+        _ordersViewController = [[WOrdersViewController alloc] init];
     }
-    return _orderViewController;
+    return _ordersViewController;
 }
 
 @end
