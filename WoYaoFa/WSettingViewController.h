@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIDateView.h"
 
-@interface WSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface WSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIDateViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) UIView *footerView;
 
 @property (nonatomic, strong) UIButton *logoutButton;
+
+@property (nonatomic, strong) WUser *user;
+
+@property (nonatomic, strong) UIDateView *datePicker;
+
+@property (nonatomic, strong) UITextField *textField;
+
 
 @end

@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BlocksKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HZActionSheet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,12 +77,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2AB49797D14D57FA43A345254AFB9F18</key>
+		<key>126EA2869D3F565C5D134D6571D9784C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>386C881F178F2384EA7F16BAD8B477D6</key>
+		<key>14EB5DDB2ADFF9CB55E18CC2AC712248</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2AB49797D14D57FA43A345254AFB9F18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>785E456A4B5EC8A508CE868E04789C03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>785E456A4B5EC8A508CE868E04789C03</key>
+		<key>842E1CD74169ADA338F939AEB98713C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,22 +117,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8FAD4980D9104B6EA270FDBF75D8FA58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAFF3FA3E91367F26C138CBFB0AB0FE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B23B3D15FFC0FC9893968F478086D58D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D26A57D0D959815A989E4DB425B144C6</key>
+		<key>DA1A7295DF2A99609DA0EEBF5E83233D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7986383BEC28AA341F0CFF3B75A74BF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EAE3C64582E89F759828EA27AE00D0A6</key>
+		<key>DF71C569BB8C182DC7BB2DAD721D5ED7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -54,10 +54,14 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    __weak NSDictionary *weakDict = dictionary;
+    __weak NSArray *weakKeys = keys;
     @weakify(self)
     [self.segment setIndexChangeBlock:^(NSInteger index) {
         @strongify(self)
-        [self getOrders:(OrderStatus)index];
+        NSNumber *status = [weakDict objectForKey:weakKeys[index]];
+        [self.viewModels removeAllObjects];
+        [self getOrders:(OrderStatus)[status integerValue]];
     }];
 }
 
@@ -102,8 +106,8 @@
 #pragma mark - Private Method
 - (void)addRACSignal{
     [RACObserve(self.segment, selectedSegmentIndex) subscribeNext:^(NSNumber *index) {
-        OrderStatus status = (OrderStatus)[index integerValue];
-        [self getOrders:status];
+        NSNumber *status = [dictionary objectForKey:keys[[index integerValue]]];
+        [self getOrders:(OrderStatus)[status integerValue]];
     } completed:^{
         
     }];
@@ -117,6 +121,7 @@
     }] map:^id(LDataResult *dataResult) {
         return [LPageResult mj_objectWithKeyValues:dataResult.datas];
     }] subscribeNext:^(LPageResult *pageResult) {
+        NSLog(@"%@",pageResult.results);
         NSArray *array = [WOrder mj_objectArrayWithKeyValuesArray:pageResult.results];
         for (WOrder *order in array) {
             WOrderView *orderView = [[WOrderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 260) viewModel:order];

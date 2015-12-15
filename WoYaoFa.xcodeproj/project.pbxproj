@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		298558AB1202074366CB41CD /* libPods-WoYaoFa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D05CAFA9B83E73D7012224 /* libPods-WoYaoFa.a */; };
+		322ACB3B1C1E575000141B19 /* WCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB3A1C1E575000141B19 /* WCompany.m */; };
+		322ACB3F1C1E890100141B19 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB3E1C1E890100141B19 /* UIAlertView+Blocks.m */; };
+		322ACB421C1E8A0700141B19 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB411C1E8A0700141B19 /* RIButtonItem.m */; };
+		322ACB461C1E9D0200141B19 /* LinApiManager+Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB451C1E9D0200141B19 /* LinApiManager+Setting.m */; };
+		322ACB4A1C1EA5B600141B19 /* UIDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB491C1EA5B600141B19 /* UIDateView.m */; };
+		322ACB4E1C1EAA1400141B19 /* WEditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB4D1C1EAA1400141B19 /* WEditNameViewController.m */; };
 		32430BF81C1A6C42007AB978 /* WOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430BF71C1A6C42007AB978 /* WOrdersViewController.m */; };
 		32430BFC1C1A6D5D007AB978 /* WOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430BFB1C1A6D5D007AB978 /* WOrderView.m */; };
 		32430BFF1C1A6D79007AB978 /* WOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430BFE1C1A6D79007AB978 /* WOrder.m */; };
@@ -64,6 +70,13 @@
 		3293154E1C196573009AF33D /* LinApiManager+LoginAndRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293154D1C196573009AF33D /* LinApiManager+LoginAndRegister.m */; };
 		329315541C197A4B009AF33D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 329315531C197A4B009AF33D /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		329315561C197A76009AF33D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329315551C197A76009AF33D /* Security.framework */; };
+		32951DEC1C1FAD06004260AE /* WLineAndCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951DEB1C1FAD06004260AE /* WLineAndCompanyViewController.m */; };
+		32951DF21C1FADF6004260AE /* WLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951DF11C1FADF6004260AE /* WLineView.m */; };
+		32951DF51C1FAE04004260AE /* WCompanyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951DF41C1FAE04004260AE /* WCompanyView.m */; };
+		32951DFA1C1FB753004260AE /* LinApiManager+LineAndCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951DF91C1FB753004260AE /* LinApiManager+LineAndCompany.m */; };
+		32951DFE1C1FF4A2004260AE /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32951DFD1C1FF4A2004260AE /* address.plist */; };
+		32951E021C1FF507004260AE /* LAddressPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951E011C1FF507004260AE /* LAddressPicker.m */; };
+		32951E061C200BDA004260AE /* WPlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951E051C200BDA004260AE /* WPlaceOrderViewController.m */; };
 		32B16E0C1C117BD400865247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0B1C117BD400865247 /* main.m */; };
 		32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0E1C117BD400865247 /* AppDelegate.m */; };
 		32B16E181C117BD400865247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E161C117BD400865247 /* Main.storyboard */; };
@@ -115,6 +128,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		322ACB391C1E575000141B19 /* WCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCompany.h; sourceTree = "<group>"; };
+		322ACB3A1C1E575000141B19 /* WCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCompany.m; sourceTree = "<group>"; };
+		322ACB3D1C1E890100141B19 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		322ACB3E1C1E890100141B19 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		322ACB401C1E8A0700141B19 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
+		322ACB411C1E8A0700141B19 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		322ACB441C1E9D0200141B19 /* LinApiManager+Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+Setting.h"; sourceTree = "<group>"; };
+		322ACB451C1E9D0200141B19 /* LinApiManager+Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+Setting.m"; sourceTree = "<group>"; };
+		322ACB481C1EA5B600141B19 /* UIDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDateView.h; sourceTree = "<group>"; };
+		322ACB491C1EA5B600141B19 /* UIDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDateView.m; sourceTree = "<group>"; };
+		322ACB4C1C1EAA1400141B19 /* WEditNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEditNameViewController.h; sourceTree = "<group>"; };
+		322ACB4D1C1EAA1400141B19 /* WEditNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEditNameViewController.m; sourceTree = "<group>"; };
 		32430BF61C1A6C42007AB978 /* WOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOrdersViewController.h; sourceTree = "<group>"; };
 		32430BF71C1A6C42007AB978 /* WOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOrdersViewController.m; sourceTree = "<group>"; tabWidth = 5; };
 		32430BFA1C1A6D5D007AB978 /* WOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOrderView.h; sourceTree = "<group>"; };
@@ -194,6 +219,19 @@
 		329315521C197A4B009AF33D /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		329315531C197A4B009AF33D /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		329315551C197A76009AF33D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		32951DEA1C1FAD06004260AE /* WLineAndCompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLineAndCompanyViewController.h; sourceTree = "<group>"; };
+		32951DEB1C1FAD06004260AE /* WLineAndCompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLineAndCompanyViewController.m; sourceTree = "<group>"; };
+		32951DF01C1FADF6004260AE /* WLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLineView.h; sourceTree = "<group>"; };
+		32951DF11C1FADF6004260AE /* WLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLineView.m; sourceTree = "<group>"; };
+		32951DF31C1FAE04004260AE /* WCompanyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCompanyView.h; sourceTree = "<group>"; };
+		32951DF41C1FAE04004260AE /* WCompanyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCompanyView.m; sourceTree = "<group>"; };
+		32951DF81C1FB753004260AE /* LinApiManager+LineAndCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+LineAndCompany.h"; sourceTree = "<group>"; };
+		32951DF91C1FB753004260AE /* LinApiManager+LineAndCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+LineAndCompany.m"; sourceTree = "<group>"; };
+		32951DFD1C1FF4A2004260AE /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
+		32951E001C1FF507004260AE /* LAddressPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAddressPicker.h; sourceTree = "<group>"; };
+		32951E011C1FF507004260AE /* LAddressPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAddressPicker.m; sourceTree = "<group>"; };
+		32951E041C200BDA004260AE /* WPlaceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPlaceOrderViewController.h; sourceTree = "<group>"; };
+		32951E051C200BDA004260AE /* WPlaceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPlaceOrderViewController.m; sourceTree = "<group>"; };
 		32B16E071C117BD400865247 /* WoYaoFa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoYaoFa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B16E0B1C117BD400865247 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32B16E0D1C117BD400865247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -288,6 +326,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		322ACB3C1C1E88F600141B19 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				322ACB401C1E8A0700141B19 /* RIButtonItem.h */,
+				322ACB411C1E8A0700141B19 /* RIButtonItem.m */,
+				322ACB3D1C1E890100141B19 /* UIAlertView+Blocks.h */,
+				322ACB3E1C1E890100141B19 /* UIAlertView+Blocks.m */,
+			);
+			name = AlertView;
+			sourceTree = "<group>";
+		};
+		322ACB431C1E9CEB00141B19 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				322ACB441C1E9D0200141B19 /* LinApiManager+Setting.h */,
+				322ACB451C1E9D0200141B19 /* LinApiManager+Setting.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		322ACB471C1EA5AD00141B19 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				322ACB481C1EA5B600141B19 /* UIDateView.h */,
+				322ACB491C1EA5B600141B19 /* UIDateView.m */,
+			);
+			name = Date;
+			sourceTree = "<group>";
+		};
 		32430BF91C1A6D45007AB978 /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +392,8 @@
 		3273B7E91C12715000597049 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				32951E031C200B98004260AE /* Order */,
+				32951DED1C1FAD0F004260AE /* LineAndCompany */,
 				3273B7EA1C12715700597049 /* RootView */,
 			);
 			name = Home;
@@ -463,6 +532,7 @@
 		328707B01C1526BE0098296E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				322ACB3C1C1E88F600141B19 /* AlertView */,
 				32BB85FE1C17FF46008016A4 /* HUD */,
 				328707D61C1584CA0098296E /* View */,
 				328707B91C152A090098296E /* Label */,
@@ -473,6 +543,8 @@
 		328707B41C1529B70098296E /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				32951DFF1C1FF4E1004260AE /* Address */,
+				322ACB471C1EA5AD00141B19 /* Date */,
 				329315511C197A32009AF33D /* Keychain */,
 				329315361C195464009AF33D /* Button */,
 				328707B81C1529FA0098296E /* Label */,
@@ -503,6 +575,8 @@
 			children = (
 				328707C51C15696E0098296E /* WSettingViewController.h */,
 				328707C61C15696E0098296E /* WSettingViewController.m */,
+				322ACB4C1C1EAA1400141B19 /* WEditNameViewController.h */,
+				322ACB4D1C1EAA1400141B19 /* WEditNameViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -593,6 +667,69 @@
 			name = Keychain;
 			sourceTree = "<group>";
 		};
+		32951DED1C1FAD0F004260AE /* LineAndCompany */ = {
+			isa = PBXGroup;
+			children = (
+				32951DEA1C1FAD06004260AE /* WLineAndCompanyViewController.h */,
+				32951DEB1C1FAD06004260AE /* WLineAndCompanyViewController.m */,
+			);
+			name = LineAndCompany;
+			sourceTree = "<group>";
+		};
+		32951DEE1C1FADD7004260AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				32951DEF1C1FADDC004260AE /* LineAndCompany */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		32951DEF1C1FADDC004260AE /* LineAndCompany */ = {
+			isa = PBXGroup;
+			children = (
+				32951DF01C1FADF6004260AE /* WLineView.h */,
+				32951DF11C1FADF6004260AE /* WLineView.m */,
+				32951DF31C1FAE04004260AE /* WCompanyView.h */,
+				32951DF41C1FAE04004260AE /* WCompanyView.m */,
+			);
+			name = LineAndCompany;
+			sourceTree = "<group>";
+		};
+		32951DF61C1FB73A004260AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				32951DF71C1FB740004260AE /* LineAndCompany */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		32951DF71C1FB740004260AE /* LineAndCompany */ = {
+			isa = PBXGroup;
+			children = (
+				32951DF81C1FB753004260AE /* LinApiManager+LineAndCompany.h */,
+				32951DF91C1FB753004260AE /* LinApiManager+LineAndCompany.m */,
+			);
+			name = LineAndCompany;
+			sourceTree = "<group>";
+		};
+		32951DFF1C1FF4E1004260AE /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				32951E001C1FF507004260AE /* LAddressPicker.h */,
+				32951E011C1FF507004260AE /* LAddressPicker.m */,
+			);
+			name = Address;
+			sourceTree = "<group>";
+		};
+		32951E031C200B98004260AE /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				32951E041C200BDA004260AE /* WPlaceOrderViewController.h */,
+				32951E051C200BDA004260AE /* WPlaceOrderViewController.m */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
 		32B16DFE1C117BD400865247 = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +777,7 @@
 		32B16E0A1C117BD400865247 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				32951DFD1C1FF4A2004260AE /* address.plist */,
 				3273B7FE1C127F5500597049 /* images */,
 				32B16E0B1C117BD400865247 /* main.m */,
 				32FA53261C11DC22003741E7 /* woyaofa-prefix.pch */,
@@ -698,6 +836,7 @@
 		32BB861C1C18196C008016A4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				322ACB431C1E9CEB00141B19 /* Setting */,
 				3293154B1C19655F009AF33D /* LoginAndRegister */,
 				32BB861D1C181976008016A4 /* AddressBook */,
 			);
@@ -730,6 +869,7 @@
 		32C7AE041C13F10C00B547D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				32951DEE1C1FADD7004260AE /* Home */,
 				32430BF91C1A6D45007AB978 /* Order */,
 				328707A91C1525090098296E /* Profile */,
 			);
@@ -750,6 +890,7 @@
 		32F332631C117E49003C7799 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32951DF61C1FB73A004260AE /* Home */,
 				32FB38C51C1A99B400590AE8 /* Order */,
 				32BB861C1C18196C008016A4 /* Profile */,
 			);
@@ -771,6 +912,8 @@
 				32430BFE1C1A6D79007AB978 /* WOrder.m */,
 				32FB38C91C1AB93600590AE8 /* WLine.h */,
 				32FB38CA1C1AB93600590AE8 /* WLine.m */,
+				322ACB391C1E575000141B19 /* WCompany.h */,
+				322ACB3A1C1E575000141B19 /* WCompany.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -975,6 +1118,7 @@
 				328707D51C1582F30098296E /* my_set_up@2x.png in Resources */,
 				329315171C192588009AF33D /* bg.png in Resources */,
 				3273B80E1C127F7800597049 /* my_not_choose@3x.png in Resources */,
+				32951DFE1C1FF4A2004260AE /* address.plist in Resources */,
 				3273B8211C12800500597049 /* order_choose.png in Resources */,
 				329315261C193F58009AF33D /* registered_password@2x.png in Resources */,
 				3273B8091C127F7800597049 /* house_not_choose.png in Resources */,
@@ -1059,13 +1203,17 @@
 			files = (
 				32BB86091C180E9D008016A4 /* WAccount.m in Sources */,
 				32FB38C81C1A9AA100590AE8 /* LinApiManager+Order.m in Sources */,
+				32951E061C200BDA004260AE /* WPlaceOrderViewController.m in Sources */,
 				32BB86041C18029D008016A4 /* MBProgressHUD+LHUD.m in Sources */,
+				322ACB421C1E8A0700141B19 /* RIButtonItem.m in Sources */,
 				32FB38CB1C1AB93600590AE8 /* WLine.m in Sources */,
 				328707AE1C1525510098296E /* WAddressBookView.m in Sources */,
 				32FA531F1C11C6AA003741E7 /* LinNetworkPrivate.m in Sources */,
+				322ACB4E1C1EAA1400141B19 /* WEditNameViewController.m in Sources */,
 				32F3326C1C118525003C7799 /* LinBaseRequest.m in Sources */,
 				32BB86201C181996008016A4 /* LinApiManager+AddressBook.m in Sources */,
 				3293151A1C1927B5009AF33D /* WLoginNavigation.m in Sources */,
+				322ACB3F1C1E890100141B19 /* UIAlertView+Blocks.m in Sources */,
 				3273B7F51C1271D900597049 /* WProfileViewController.m in Sources */,
 				3273B7ED1C12718000597049 /* WHomeViewController.m in Sources */,
 				32F332691C11847D003C7799 /* LinNetworkAgent.m in Sources */,
@@ -1081,16 +1229,24 @@
 				329315291C19447E009AF33D /* WRegisterViewController.m in Sources */,
 				32FA53251C11D0C6003741E7 /* LinApiManager.m in Sources */,
 				3273B7FA1C12721200597049 /* WOrderNavigation.m in Sources */,
+				322ACB4A1C1EA5B600141B19 /* UIDateView.m in Sources */,
 				328707B31C1526E00098296E /* UILabel+LLabel.m in Sources */,
 				3273B7FD1C12722E00597049 /* WProfileNavigation.m in Sources */,
 				329315391C19547C009AF33D /* LCountDownButton.m in Sources */,
+				322ACB3B1C1E575000141B19 /* WCompany.m in Sources */,
+				32951DEC1C1FAD06004260AE /* WLineAndCompanyViewController.m in Sources */,
 				328707CB1C156B900098296E /* WSettingView.m in Sources */,
+				32951DF51C1FAE04004260AE /* WCompanyView.m in Sources */,
 				3293151D1C1930F6009AF33D /* WLoginViewController.m in Sources */,
+				32951DFA1C1FB753004260AE /* LinApiManager+LineAndCompany.m in Sources */,
 				32430BFF1C1A6D79007AB978 /* WOrder.m in Sources */,
 				32BB86151C181367008016A4 /* LPageResult.m in Sources */,
+				32951E021C1FF507004260AE /* LAddressPicker.m in Sources */,
 				328707B71C1529F00098296E /* LLabel.m in Sources */,
+				322ACB461C1E9D0200141B19 /* LinApiManager+Setting.m in Sources */,
 				32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */,
 				328707C71C15696E0098296E /* WSettingViewController.m in Sources */,
+				32951DF21C1FADF6004260AE /* WLineView.m in Sources */,
 				32BB86111C1812AC008016A4 /* LDataResult.m in Sources */,
 				32B16E0C1C117BD400865247 /* main.m in Sources */,
 				32BB861B1C181800008016A4 /* WAddressBook.m in Sources */,

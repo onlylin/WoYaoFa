@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //适配ios7
+    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
+    {
+        self.navigationController.navigationBar.translucent = NO;
+    }
+    
     [self.view addSubview:self.tableView];
     [self.tableView setTableFooterView:self.footerView];
     [self.footerView addSubview:self.registerButton];

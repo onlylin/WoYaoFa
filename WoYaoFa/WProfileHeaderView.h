@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WAccount.h"
 
 @interface WProfileHeaderView : UIView
 
@@ -16,6 +17,14 @@
 
 @property (nonatomic, strong) UIButton *settingButton;
 
-- (id)initWithFrame:(CGRect)frame;
+@property (nonatomic, strong) UILabel *nameLabel;
+
+@property (nonatomic, strong) UILabel *creditLabel;
+
+@property (nonatomic, strong) UIView *nameView;
+
+- (id)initWithFrame:(CGRect)frame viewModel:(WAccount*)account;
+
+- (void)updateViewModel:(WAccount*)account;
 
 @end

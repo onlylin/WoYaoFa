@@ -20,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //适配ios7
+    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
+    {
+        self.navigationController.navigationBar.translucent = NO;
+    }
+    
     [self.view addSubview:self.backView];
     [self.view addSubview:self.usernameField];
     [self.view addSubview:self.usernameLine];
@@ -131,7 +137,9 @@
             NSLog(@"%@",dataResult.datas);
             return [WAccount mj_objectWithKeyValues:dataResult.datas];
         }] subscribeNext:^(WAccount *account) {
-            NSLog(@"%@",account.name);
+//            [[NSUserDefaults standardUserDefaults] setObject:account.mj_keyValues forKey:currentUser];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WNotificationLogin object:account];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }];
     }];
 }

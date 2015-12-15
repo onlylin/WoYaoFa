@@ -9,6 +9,24 @@
 #ifndef WNotification_h
 #define WNotification_h
 
-static const NSString *WNotificationLogin = @"login";
+/**
+ *  登录通知
+ */
+static NSString *WNotificationLogin = @"login";
+
+/**
+ *  登出通知
+ */
+static NSString *WNotificationLogout = @"logout";
+
+/**
+ *  修改昵称通知
+ */
+static NSString *WNotficationNikname = @"nikname";
+
+/**
+ *  更新用户信息通知
+ */
+static NSString *WNotficationUpdateUser = @"updateUser";
 
 #endif /* WNotification_h */

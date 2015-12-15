@@ -14,6 +14,8 @@ target 'WoYaoFa' do
   pod 'LBBlurredImage'
   pod 'HMSegmentedControl'
   pod 'YLMoment'
+  pod 'BlocksKit'
+  pod 'HZActionSheet'
 end
 
 target 'WoYaoFaTests' do

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WCompany.h"
 
 @interface WLine : NSObject
 
@@ -42,5 +43,7 @@
 @property (nonatomic, strong) NSString *mark;
 
 @property (nonatomic, assign) NSInteger status;
+
+@property (nonatomic, strong) WCompany *company;
 
 @end

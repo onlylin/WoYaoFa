@@ -7,9 +7,12 @@
 //
 
 #import "WSettingViewController.h"
+#import "HZActionSheet.h"
 #import "WSettingView.h"
+#import "LinApiManager+Setting.h"
+#import "WEditNameViewController.h"
 
-@interface WSettingViewController ()
+@interface WSettingViewController ()<HZActionSheetDelegate>
 
 @end
 
@@ -19,9 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //适配ios7
+    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
+    {
+        self.navigationController.navigationBar.translucent = NO;
+    }
+    
+    self.navigationItem.title = @"设置";
+    
     [self.view addSubview:self.tableView];
     [self.tableView setTableFooterView:self.footerView];
     [self.footerView addSubview:self.logoutButton];
+    [self.view addSubview:self.textField];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -38,7 +50,10 @@
         make.height.mas_equalTo(40);
         make.centerX.equalTo(self.footerView);
     }];
-    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WNotficationUpdateUser object:self.user];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,27 +81,36 @@
     switch (indexPath.row) {
         case 0:
         {
-            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleLogo];
+            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleLogo viewModel:self.user];
             break;
         }
         case 1:
         {
-            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleNikname];
+            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleNikname viewModel:self.user];
+            [RACObserve(self.user, name) subscribeNext:^(id x) {
+                [view updateViewModel:self.user role:WSettingViewRoleNikname];
+            }];
             break;
         }
         case 2:
         {
-            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleSex];
+            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleSex viewModel:self.user];
+            [RACObserve(self.user, sex) subscribeNext:^(id x) {
+                [view updateViewModel:self.user role:WSettingViewRoleSex];
+            }];
             break;
         }
         case 3:
         {
-            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleBirthday];
+            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleBirthday viewModel:self.user];
+            [RACObserve(self.user, birthday) subscribeNext:^(id x) {
+                [view updateViewModel:self.user role:WSettingViewRoleBirthday];
+            }];
             break;
         }
         case 4:
         {
-            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleAccountAndSecurity];
+            view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleAccountAndSecurity viewModel:nil];
             break;
         }
     }
@@ -95,9 +119,92 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 1:
+        {
+            //注册修改昵称的通知
+            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:WNotficationNikname object:nil] subscribeNext:^(NSNotification *notification) {
+                self.user.name = notification.object;
+            }];
+            WEditNameViewController *viewController = [[WEditNameViewController alloc] init];
+            viewController.userId = self.user.ID;
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case 2:
+        {
+            HZActionSheet *actionSheet = [[HZActionSheet alloc] initWithTitle:@"选择性别" delegate:self cancelButtonTitle:@"取消" destructiveButtonIndexSet:nil otherButtonTitles:@[@"男",@"女"]];
+            [actionSheet showInView:self.view];
+            break;
+        }
+        case 3:
+        {
+            [self.textField becomeFirstResponder];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
+
+#pragma mark - HZActionSheetDelegate
+- (void)actionSheet:(HZActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != 2) {
+        WUser *modifyUser = [[WUser alloc] init];
+        modifyUser.ID = self.user.ID;
+        modifyUser.sex = buttonIndex;
+        RACSignal *signal = [[LinApiManager shareInstance] modifyUser:modifyUser];
+        [[signal filter:^BOOL(LDataResult *dataResult) {
+            [MBProgressHUD showTextOnly:dataResult.msg];
+            return dataResult.code == ResponseStatusOk;
+        }] subscribeNext:^(LDataResult *dataResult) {
+            self.user.sex = modifyUser.sex;
+        } completed:^{
+            
+        }];
+    }
+}
+
+#pragma mark - UIDateView Delegate
+- (void)selected:(NSDate *)date{
+    WUser *modifyUser = [[WUser alloc] init];
+    modifyUser.ID = self.user.ID;
+    modifyUser.birthday = [date timeIntervalSince1970] * 1000;
+    RACSignal *signal = [[LinApiManager shareInstance] modifyUser:modifyUser];
+    [[signal filter:^BOOL(LDataResult *dataResult) {
+        [MBProgressHUD showTextOnly:dataResult.msg];
+        return dataResult.code == ResponseStatusOk;
+    }] subscribeNext:^(LDataResult *dataResult) {
+        self.user.birthday = modifyUser.birthday;
+    } completed:^{
+        
+    }];
+    [self deSelected];
+}
+
+- (void)deSelected{
+    [self.textField resignFirstResponder];
+}
+
+#pragma mark - Event Response
+- (void)logoutAction:(id)sender{
+    UIAlertView *alertView = [UIAlertView bk_showAlertViewWithTitle:nil message:@"是否退出当前账号?" cancelButtonTitle:@"取消" otherButtonTitles:@[@"退出"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex == 1) {
+            //发送退出登录通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:WNotificationLogout object:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+    [alertView show];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -128,8 +235,34 @@
         _logoutButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_logoutButton setTitle:@"退出当前账户" forState:UIControlStateNormal];
         [_logoutButton setBackgroundColor:BUTTON_BG];
+        [_logoutButton addTarget:self action:@selector(logoutAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _logoutButton;
+}
+
+- (WUser*)user{
+    if (_user == nil) {
+        _user = [[WUser alloc] init];
+    }
+    return _user;
+}
+
+- (UIDateView*)datePicker{
+    if (_datePicker == nil) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];//设置为中
+        NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+        _datePicker = [[UIDateView alloc] initWithTimeZone:timeZone locale:locale mode:UIDatePickerModeDate maxDate:[NSDate date]];
+        _datePicker.delegate = self;
+    }
+    return _datePicker;
+}
+
+- (UITextField*)textField{
+    if (_textField == nil) {
+        _textField = [UITextField new];
+        _textField.inputView = self.datePicker;
+    }
+    return _textField;
 }
 
 @end

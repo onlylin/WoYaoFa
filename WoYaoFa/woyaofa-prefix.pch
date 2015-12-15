@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "BFKit.h"
 #import "YLMoment.h"
+#import "BlocksKit+UIKit.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
 #import <SMS_SDK/SMSSDK.h>
@@ -43,5 +44,7 @@
 
 #define MOB_SMS_APPKEY (@"afe6f60b4117")
 #define MOB_SMS_SECRET (@"38464e8305295783bb91353914c4bb20")
+
+#define currentUser (@"currentUser")
 
 #endif /* woyaofa_prefix_pch */

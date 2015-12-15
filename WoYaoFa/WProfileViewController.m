@@ -10,7 +10,7 @@
 #import "WAddressBookViewController.h"
 #import "WSettingViewController.h"
 #import "WLoginNavigation.h"
-#import "WAccount.h"
+#import "WLineAndCompanyViewController.h"
 
 @interface WProfileViewController ()
 
@@ -119,7 +119,11 @@
             break;
         }
         default:
+        {
+            WLineAndCompanyViewController *viewController = [[WLineAndCompanyViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
             break;
+        }
     }
 }
 
@@ -133,9 +137,44 @@
 #pragma mark - Private Method
 - (void)addRACsignal{
     self.profileHeadView.settingButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        WLoginNavigation *loginNavigation = [[WLoginNavigation alloc] init];
-        [self presentViewController:loginNavigation animated:YES completion:nil];
+        if (self.account != nil) {
+            //注册退出登录的通知
+            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:WNotificationLogout object:nil] subscribeNext:^(id x) {
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:currentUser];
+                self.account = nil;
+            }];
+            //用户信息更新通知
+            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:WNotficationUpdateUser object:nil] subscribeNext:^(NSNotification *notification) {
+                NSLog(@"%@",notification.object);
+                WAccount *modifyAccount = self.account;
+                modifyAccount.user = notification.object;
+                NSLog(@"%@",modifyAccount.user.name);
+                self.account = modifyAccount;
+            }];
+            WSettingViewController *viewController = [[WSettingViewController alloc] init];
+            viewController.user = self.account.user;
+            [self.navigationController pushViewController:viewController animated:YES];
+        }else{
+            [self showLoginView];
+        }
         return [RACSignal empty];
+    }];
+    
+    [RACObserve(self, account) subscribeNext:^(WAccount *object) {
+        [self.profileHeadView updateViewModel:object];
+        [[NSUserDefaults standardUserDefaults] setObject:self.account.mj_keyValues forKey:currentUser];
+    } completed:^{
+        
+    }];
+}
+
+
+- (void)showLoginView{
+    WLoginNavigation *loginNavigation = [[WLoginNavigation alloc] init];
+    [self presentViewController:loginNavigation animated:YES completion:^{
+        [[[NSNotificationCenter defaultCenter] rac_addObserverForName:WNotificationLogin object:nil] subscribeNext:^(NSNotification *notification) {
+            self.account = notification.object;
+        }];
     }];
 }
 
@@ -160,7 +199,7 @@
 
 - (WProfileHeaderView*)profileHeadView{
     if (_profileHeadView == nil) {
-        _profileHeadView = [[WProfileHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 0.3 * SCREEN.height)];
+        _profileHeadView = [[WProfileHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 0.3 * SCREEN.height) viewModel:self.account];
     }
     return _profileHeadView;
 }
@@ -170,6 +209,13 @@
         _logoView = [UIView new];
     }
     return _logoView;
+}
+
+- (WAccount*)account{
+    if (_account == nil) {
+        _account = [WAccount mj_objectWithKeyValues:[[NSUserDefaults standardUserDefaults] objectForKey:currentUser]];
+    }
+    return _account;
 }
 
 

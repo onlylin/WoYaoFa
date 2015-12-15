@@ -17,5 +17,7 @@
 
 @property (nonatomic, strong) UIView *logoView;
 
+@property (nonatomic, strong) WAccount *account;
+
 
 @end

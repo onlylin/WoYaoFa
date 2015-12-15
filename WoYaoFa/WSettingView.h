@@ -16,12 +16,15 @@ typedef NS_ENUM(NSInteger,WSettingViewRole) {
     WSettingViewRoleAccountAndSecurity
 };
 
+
 @interface WSettingView : UIView
 
 @property (nonatomic, strong) UILabel *textLabel;
-@property (nonatomic, strong) UILabel *text;
+@property (nonatomic, strong) UILabel *value;
 @property (nonatomic, strong) UIImageView *imageView;
 
-- (id)initWithFrame:(CGRect)frame viewRole:(WSettingViewRole)role;
+- (id)initWithFrame:(CGRect)frame viewRole:(WSettingViewRole)role viewModel:(WUser*)user;
+
+- (void)updateViewModel:(WUser*)user role:(WSettingViewRole)role;
 
 @end

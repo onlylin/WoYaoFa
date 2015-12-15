@@ -11,6 +11,7 @@
 #define FONT_S [UIFont systemFontOfSize:16.0f]
 #define FONT_M [UIFont systemFontOfSize:15.0f]
 #define TEXTCOLOR [UIColor hex:@"#a1a1a1"]
+#define ORDER_BUTTON_BG [UIColor hex:@"#2e82ff"]
 
 @implementation WOrderView
 
@@ -22,6 +23,8 @@
         [self.headerView addSubview:self.companyName];
         [self.headerView addSubview:self.arrowImageView];
         [self.headerView addSubview:self.orderStatus];
+        
+        self.companyName.text = order.line.company.name;
         
         [self validOrderStatus:order.status];
         
@@ -54,6 +57,7 @@
         [self.contentView addSubview:self.unitLabel];
         
         self.orderNumber.text = [NSString stringWithFormat:@"运单号：%@",order.number];
+        self.price.text = [NSString stringWithFormat:@"%.1f",(order.fee + order.pickUpFee + order.sendFee)];
 
         [self addSubview:self.line3View];
         self.line3View.backgroundColor = VIEW_BG;
@@ -84,7 +88,7 @@
         make.left.mas_equalTo(self.companyImageView.mas_right).offset(5);
         make.centerY.mas_equalTo(self.companyImageView);
     }];
-    self.companyName.text = @"德邦物流有限公司";
+//    self.companyName.text = @"德邦物流有限公司";
     
     [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.companyName.mas_right).offset(5);
@@ -95,7 +99,7 @@
         make.right.mas_offset(-15);
         make.centerY.equalTo(self.headerView);
     }];
-    self.orderStatus.text = @"待受理";
+//    self.orderStatus.text = @"待受理";
     
     [self.line1View mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_offset(0);
@@ -168,7 +172,7 @@
         make.bottom.mas_equalTo(self.unitLabel.mas_bottom);
         make.right.mas_equalTo(self.unitLabel.mas_left);
     }];
-    self.price.text = @"688.0";
+//    self.price.text = @"688.0";
     
     [self.priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.line2View.mas_bottom).offset(10);
@@ -212,31 +216,59 @@
         case OrderStatusAccepted:
         {
             self.orderStatus.text = @"待受理";
+            [self.right2Button setTitle:@"  提醒受理  " forState:UIControlStateNormal];
+            [self.right2Button setTitleColor:ORDER_BUTTON_BG];
+            [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
+            [self.right1Button setTitle:@"  取消订单  " forState:UIControlStateNormal];
+            [self.leftButton setHidden:YES];
             break;
         }
         case OrderStatusShipped:
         {
             self.orderStatus.text = @"待发货";
+            [self.right2Button setTitle:@"  提醒发货  " forState:UIControlStateNormal];
+            [self.right2Button setTitleColor:ORDER_BUTTON_BG];
+            [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
+            [self.right1Button setTitle:@"  申请取消  " forState:UIControlStateNormal];
+            [self.leftButton setHidden:YES];
             break;
         }
         case OrderStatusReceived:
         {
             self.orderStatus.text = @"待收货";
+            [self.right2Button setTitle:@"  确认到货  " forState:UIControlStateNormal];
+            [self.right2Button setTitleColor:ORDER_BUTTON_BG];
+            [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
+            [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
+            [self.leftButton setTitle:@"  申请理赔  " forState:UIControlStateNormal];
             break;
         }
         case OrderStatusConfirmed:
         {
             self.orderStatus.text = @"待确认";
+            [self.right2Button setTitle:@"  确认到货  " forState:UIControlStateNormal];
+            [self.right2Button setTitleColor:ORDER_BUTTON_BG];
+            [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
+            [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
+            [self.leftButton setTitle:@"  申请理赔  " forState:UIControlStateNormal];
             break;
         }
         case OrderStatusEvaluated:
         {
             self.orderStatus.text = @"待评论";
+            [self.right2Button setTitle:@"  评价  " forState:UIControlStateNormal];
+            [self.right2Button setTitleColor:ORDER_BUTTON_BG];
+            [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
+            [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
+            [self.leftButton setTitle:@"  删除订单  " forState:UIControlStateNormal];
             break;
         }
         case OrderStatusCompleted:
         {
             self.orderStatus.text = @"已完成";
+            [self.right2Button setTitle:@"  删除订单  " forState:UIControlStateNormal];
+            [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
+            [self.leftButton setHidden:YES];
             break;
         }
         default:

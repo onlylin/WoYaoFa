@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //适配ios7
+    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
+    {
+        self.navigationController.navigationBar.translucent = NO;
+    }
+    
     self.view.backgroundColor = VIEW_BG;
     self.navigationController.navigationBar.barTintColor = NAV_BG;
 }
