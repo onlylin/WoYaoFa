@@ -58,6 +58,7 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "AMap2DMap/MAMapKit.framework/Versions/3.2.0.163b642/Resources/AMap.bundle"
   install_resource "BFKit/Source/Languages/en.lproj"
   install_resource "BFKit/Source/Languages/id.lproj"
   install_resource "BFKit/Source/Languages/it.lproj"
@@ -67,9 +68,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "BFKit/Source/Languages/zh-Hans.lproj"
   install_resource "BFKit/Source/Languages/zh-Hant.lproj"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "MLPhotoBrowser/MLPhotoBrowser/MLPhotoBrowser.bundle"
+  install_resource "MLSelectPhoto/MLSelectPhoto/MLSelectPhoto.bundle"
+  install_resource "WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt"
   install_resource "${BUILT_PRODUCTS_DIR}/YLMoment-iOS.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "AMap2DMap/MAMapKit.framework/Versions/3.2.0.163b642/Resources/AMap.bundle"
   install_resource "BFKit/Source/Languages/en.lproj"
   install_resource "BFKit/Source/Languages/id.lproj"
   install_resource "BFKit/Source/Languages/it.lproj"
@@ -79,6 +84,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "BFKit/Source/Languages/zh-Hans.lproj"
   install_resource "BFKit/Source/Languages/zh-Hant.lproj"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "MLPhotoBrowser/MLPhotoBrowser/MLPhotoBrowser.bundle"
+  install_resource "MLSelectPhoto/MLSelectPhoto/MLSelectPhoto.bundle"
+  install_resource "WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt"
   install_resource "${BUILT_PRODUCTS_DIR}/YLMoment-iOS.bundle"
 fi
 

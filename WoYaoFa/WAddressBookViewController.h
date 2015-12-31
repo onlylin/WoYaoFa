@@ -14,4 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray *viewModels;
 
+@property (nonatomic, strong) UIButton *addButton;
+
+@property (nonatomic, strong) UISegmentedControl *segment;
+
 @end

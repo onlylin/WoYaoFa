@@ -14,6 +14,8 @@ static const NSString *REGISTER_ACCOUNT_ACTION = @"webapi/accounts/register";
 
 static const NSString *SIGNIN_ACTION = @"webapi/accounts/signin";
 
+static const NSString *CHANGE_PWD_ACTION = @"webapi/accounts/resetPwd";
+
 @implementation LinApiManager (LoginAndRegister)
 
 /**
@@ -84,6 +86,32 @@ static const NSString *SIGNIN_ACTION = @"webapi/accounts/signin";
         }];
         return nil;
     }];
+}
+
+/**
+ *  修改密码
+ *
+ *  @param account
+ *  @param code
+ *  @param appkey
+ *
+ *  @return 
+ */
+- (RACSignal*)resetPwd:(WAccount *)account code:(NSString *)code appKey:(NSString *)appkey{
+    NSString *url = [NSString stringWithFormat:@"%@/%@",HOST,CHANGE_PWD_ACTION];
+    NSMutableDictionary *params = account.mj_keyValues;
+    [params setObject:code forKey:@"code"];
+    [params setObject:appkey forKey:@"appkey"];
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [self sendPost:url params:params success:^(LinBaseRequest *request) {
+            [subscriber sendNext:[LDataResult mj_objectWithKeyValues:request.responseJSONObject]];
+            [subscriber sendCompleted];
+        } failure:^(LinBaseRequest *request) {
+            
+        }];
+        return nil;
+    }];
+
 }
 
 @end

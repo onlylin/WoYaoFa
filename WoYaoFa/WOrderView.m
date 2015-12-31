@@ -14,8 +14,9 @@
 #define ORDER_BUTTON_BG [UIColor hex:@"#2e82ff"]
 
 @implementation WOrderView
+@synthesize delegate;
 
-- (id)initWithFrame:(CGRect)frame viewModel:(WOrder *)order{
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.headerView];
@@ -23,10 +24,6 @@
         [self.headerView addSubview:self.companyName];
         [self.headerView addSubview:self.arrowImageView];
         [self.headerView addSubview:self.orderStatus];
-        
-        self.companyName.text = order.line.company.name;
-        
-        [self validOrderStatus:order.status];
         
         [self addSubview:self.line1View];
         self.line1View.backgroundColor = VIEW_BG;
@@ -39,15 +36,6 @@
         [self.contentView addSubview:self.goodsDetail];
         [self.contentView addSubview:self.buyTimeLabel];
         
-        
-        
-        self.beginAddress.text = [NSString stringWithFormat:@"%@%@",order.line.beginCity,order.line.beginDistrict];
-        self.endAddress.text = [NSString stringWithFormat:@"%@%@",order.line.endCity,order.line.endDistrict];
-        self.goodsDetail.text = [NSString stringWithFormat:@"货物信息：%@",order.detail != nil ? order.detail : @"无"];
-        
-        NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:order.buyTime / 1000];
-        self.buyTimeLabel.text = [NSString stringWithFormat:@"下单时间：%@",[[YLMoment momentWithDate:date] format:@"yyyy-MM-dd HH:mm"]];
-        
         [self addSubview:self.line2View];
         self.line2View.backgroundColor = VIEW_BG;
         
@@ -55,9 +43,6 @@
         [self.contentView addSubview:self.priceLabel];
         [self.contentView addSubview:self.price];
         [self.contentView addSubview:self.unitLabel];
-        
-        self.orderNumber.text = [NSString stringWithFormat:@"运单号：%@",order.number];
-        self.price.text = [NSString stringWithFormat:@"%.1f",(order.fee + order.pickUpFee + order.sendFee)];
 
         [self addSubview:self.line3View];
         self.line3View.backgroundColor = VIEW_BG;
@@ -68,6 +53,8 @@
         [self.footerView addSubview:self.right2Button];
         
         self.backgroundColor = [UIColor whiteColor];
+        
+        [self addRACSignal];
     }
     return self;
 }
@@ -216,6 +203,9 @@
         case OrderStatusAccepted:
         {
             self.orderStatus.text = @"待受理";
+            self.right2Button.tag = OrderStatusAccepted;
+            self.right1Button.tag = OrderStatusAccepted;
+            
             [self.right2Button setTitle:@"  提醒受理  " forState:UIControlStateNormal];
             [self.right2Button setTitleColor:ORDER_BUTTON_BG];
             [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
@@ -226,6 +216,9 @@
         case OrderStatusShipped:
         {
             self.orderStatus.text = @"待发货";
+            self.right2Button.tag = OrderStatusShipped;
+            self.right1Button.tag = OrderStatusShipped;
+            
             [self.right2Button setTitle:@"  提醒发货  " forState:UIControlStateNormal];
             [self.right2Button setTitleColor:ORDER_BUTTON_BG];
             [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
@@ -236,16 +229,25 @@
         case OrderStatusReceived:
         {
             self.orderStatus.text = @"待收货";
+            self.right1Button.tag = OrderStatusReceived;
+            self.right2Button.tag = OrderStatusReceived;
+            self.leftButton.tag = OrderStatusReceived;
+            
             [self.right2Button setTitle:@"  确认到货  " forState:UIControlStateNormal];
             [self.right2Button setTitleColor:ORDER_BUTTON_BG];
             [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
             [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
             [self.leftButton setTitle:@"  申请理赔  " forState:UIControlStateNormal];
+            [self.leftButton setHidden:NO];
             break;
         }
         case OrderStatusConfirmed:
         {
             self.orderStatus.text = @"待确认";
+            self.right1Button.tag = OrderStatusConfirmed;
+            self.right2Button.tag = OrderStatusConfirmed;
+            self.leftButton.tag = OrderStatusConfirmed;
+            
             [self.right2Button setTitle:@"  确认到货  " forState:UIControlStateNormal];
             [self.right2Button setTitleColor:ORDER_BUTTON_BG];
             [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
@@ -256,7 +258,11 @@
         case OrderStatusEvaluated:
         {
             self.orderStatus.text = @"待评论";
-            [self.right2Button setTitle:@"  评价  " forState:UIControlStateNormal];
+            self.right1Button.tag = OrderStatusEvaluated;
+            self.right2Button.tag = OrderStatusEvaluated;
+            self.leftButton.tag = OrderStatusEvaluated;
+            
+            [self.right2Button setTitle:@"      评价      " forState:UIControlStateNormal];
             [self.right2Button setTitleColor:ORDER_BUTTON_BG];
             [[self.right2Button layer] setBorderColor:ORDER_BUTTON_BG.CGColor];
             [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
@@ -266,6 +272,9 @@
         case OrderStatusCompleted:
         {
             self.orderStatus.text = @"已完成";
+            self.right1Button.tag = OrderStatusConfirmed;
+            self.right2Button.tag = OrderStatusConfirmed;
+            
             [self.right2Button setTitle:@"  删除订单  " forState:UIControlStateNormal];
             [self.right1Button setTitle:@"  查看物流  " forState:UIControlStateNormal];
             [self.leftButton setHidden:YES];
@@ -276,6 +285,44 @@
     }
 }
 
+- (void)addRACSignal{
+    [[RACObserve(self, model) filter:^BOOL(WOrder *object) {
+        return object != nil;
+    }] subscribeNext:^(WOrder *object) {
+        
+        self.companyName.text = object.line.company.name;
+        
+        [self validOrderStatus:object.status];
+        
+        self.beginAddress.text = [NSString stringWithFormat:@"%@%@",object.line.beginCity,object.line.beginDistrict];
+        self.endAddress.text = [NSString stringWithFormat:@"%@%@",object.line.endCity,object.line.endDistrict];
+        self.goodsDetail.text = [NSString stringWithFormat:@"货物信息：%@",object.detail != nil ? object.detail : @"无"];
+        
+        NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:object.buyTime / 1000];
+        self.buyTimeLabel.text = [NSString stringWithFormat:@"下单时间：%@",[[YLMoment momentWithDate:date] format:@"yyyy-MM-dd HH:mm"]];
+        
+        self.orderNumber.text = [NSString stringWithFormat:@"运单号：%@",object.number];
+        self.price.text = [NSString stringWithFormat:@"%.1f",(object.fee + object.pickUpFee + object.sendFee)];
+    }];
+}
+
+- (void)click1:(UIButton*)sender{
+    if ([delegate respondsToSelector:@selector(clickLeftButton:viewModel:)]) {
+        [delegate clickLeftButton:sender.tag viewModel:self];
+    }
+}
+
+- (void)click2:(UIButton*)sender{
+    if ([delegate respondsToSelector:@selector(clickRight1Button:viewModel:)]) {
+        [delegate clickRight1Button:sender.tag viewModel:self];
+    }
+}
+
+- (void)click3:(UIButton*)sender{
+    if ([delegate respondsToSelector:@selector(clickRight2Button:viewModel:)]) {
+        [delegate clickRight2Button:sender.tag viewModel:self];
+    }
+}
 
 #pragma mark - Getter and Setter
 - (UIView*)headerView{
@@ -443,6 +490,7 @@
         _leftButton.layer.borderColor = [TEXTCOLOR CGColor];
         _leftButton.tintColor = TEXTCOLOR;
         _leftButton.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+        [_leftButton addTarget:self action:@selector(click1:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _leftButton;
 }
@@ -457,6 +505,7 @@
         _right1Button.layer.borderColor = [TEXTCOLOR CGColor];
         _right1Button.tintColor = TEXTCOLOR;
         _right1Button.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+        [_right1Button addTarget:self action:@selector(click2:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _right1Button;
 }
@@ -471,8 +520,16 @@
         _right2Button.layer.borderColor = [TEXTCOLOR CGColor];
         _right2Button.tintColor = TEXTCOLOR;
         _right2Button.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+        [_right2Button addTarget:self action:@selector(click3:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _right2Button;
+}
+
+- (WOrder*)model{
+    if (_model == nil) {
+        _model = [[WOrder alloc] init];
+    }
+    return _model;
 }
 
 @end

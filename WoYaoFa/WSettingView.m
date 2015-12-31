@@ -53,7 +53,7 @@
                 make.centerY.equalTo(self);
             }];
             self.imageView.layer.cornerRadius = (self.height - 6) / 2;
-            self.imageView.backgroundColor = [UIColor redColor];
+            [self.imageView sd_setImageWithURL:[NSURL URLWithString:user.logo] placeholderImage:nil];
             break;
         }
         case WSettingViewRoleNikname:

@@ -66,6 +66,42 @@
     [self addOperation:request];
 }
 
+- (void)addMutiRequest:(LinMutipartRequest *)request{
+    NSString *url = [request url];
+    id param = [request arguments];
+    LinMutipartRequestMimeType mimeType = [request mimeType];
+    
+    if (request.requestSerializerType == LinRequestSerializerTypeHTTP) {
+        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    }else if (request.requestSerializerType == LinRequestSerializerTypeJSON){
+        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    }
+    
+     _manager.requestSerializer.timeoutInterval = request.requestTimeoutInterval;
+    
+    request.requestOperation = [_manager POST:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        switch (mimeType) {
+            case LinMutipartRequestMimeTypeImageAndPng:
+            {
+                NSArray *formDatas = [request formDatas];
+                for (int i = 0; i < [formDatas count]; i++) {
+                    UIImage *image = formDatas[i];
+                    NSData *data = UIImagePNGRepresentation(image);
+                    NSString *fileName = [NSString stringWithFormat:@"image%d.png",i];
+                    NSString *formKey = [NSString stringWithFormat:@"image%d",i];
+                    [formData appendPartWithFileData:data name:formKey fileName:fileName mimeType:@"image/png"];
+                }
+                break;
+            }
+        }
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        [self handleRequestResult:operation];
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        [self handleRequestResult:operation];
+    }];
+    [self addOperation:request];
+}
+
 - (void)cancelRequest:(LinBaseRequest *)request{
     [request.requestOperation cancel];
     

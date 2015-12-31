@@ -40,6 +40,9 @@ typedef NS_ENUM(NSInteger,OrderStatus) {
 @property (nonatomic, assign) long arrivalTime;
 @property (nonatomic, assign) long completeTime;
 
+@property (nonatomic, assign) NSInteger lineId;
+@property (nonatomic, assign) NSInteger accountId;
 @property (nonatomic, strong) WLine *line;
+
 
 @end

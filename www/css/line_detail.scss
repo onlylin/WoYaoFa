@@ -1,0 +1,150 @@
+@charset "utf-8";
+@import "base.scss";
+.subtitle {
+    color: #727272;
+}
+.items {
+    background: #fff;
+    padding: 1rem;
+}
+.certificate {
+    width: 4.5rem;
+    height: 1.2rem;
+}
+.name_items {
+    display: block;
+    float: left;
+}
+.arrow {
+    height: 1.25rem;
+    width: 0.83rem;
+    display: block;
+    float: right;
+}
+.arrive {
+    height: 1rem;
+    width: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.margin_right {
+    margin-right: 1.5rem;
+}
+.price_info {
+    height: 2rem;
+    line-height: 2rem;
+    .price {
+        color: #fb0304;
+    }
+}
+#company {
+    @extend .divider_block;
+    .logo {
+        height: 5.2rem;
+        width: 5.2rem;
+    }
+    #company_content {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-left: 0.5rem;
+        width: 19rem;
+        #name {
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+    }
+    .center {
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
+}
+#address {
+    @extend .divider;
+    #logo {
+        width: 0.9rem;
+        height: 1.25rem;
+        display: block;
+        float: left;
+    }
+    div {
+        margin-left: 1rem;
+        display: block;
+        float: left;
+        width: 18.5rem;
+    }
+    #phone {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+        display: block;
+        float: right;
+    }
+}
+#evaluation {
+    @extend .divider_block;
+}
+#lines {
+    @extend .divider;
+    margin-bottom: 4rem;
+}
+#carousel {
+    height: 19rem;
+    width: 30rem;
+    overflow: hidden;
+    background: #f00;
+    ul {
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        li {
+            height: 100%;
+            width: 100%;
+            float: left;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+.option {
+    width: 100%;
+    height: 4rem;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+    .collect,
+    .contact {
+        padding-top: 0.9rem;
+        text-align: center;
+        height: 3.1rem;
+        display: block;
+        float: left;
+        width: 25%;
+        background: #615f60;
+        img {
+            margin-bottom: 0.2rem;
+            height: 1rem;
+            width: 1rem;
+        }
+    }
+    .order {
+        height: 4rem;
+        display: block;
+        float: left;
+        width: 50%;
+        line-height: 4rem;
+        text-align: center;
+        font-size: 1.5rem;
+        background: #fd8402;
+    }
+}
+#from_to {
+    font-size: 1.5rem;
+    img {
+        height: 1rem;
+        width: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIDateView.h"
 
-@interface WSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIDateViewDelegate>
+@interface WSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIDateViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 

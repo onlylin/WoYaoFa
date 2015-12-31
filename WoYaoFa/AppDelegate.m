@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <MAMapKit/MAMapKit.h>
+#import "AMapKey.h"
+#import <AMapLocationKit/AMapLocationKit.h>
 
 @interface AppDelegate ()
 

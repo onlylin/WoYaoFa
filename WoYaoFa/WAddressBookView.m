@@ -14,7 +14,7 @@
 @implementation WAddressBookView
 
 
-- (id)initWithFrame:(CGRect)frame viewModel:(WAddressBook *)addressBook{
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.nameView];
@@ -31,11 +31,9 @@
         [self.addressView addSubview:self.addressLabel];
         [self.addressView addSubview:self.address];
         
-        self.name.text = addressBook.name;
-        self.phone.text = addressBook.phone;
-        self.address.text = [NSString stringWithFormat:@"%@%@%@%@%@",addressBook.province,addressBook.city,addressBook.district,addressBook.street,addressBook.detail];
-        
         self.backgroundColor = VIEW_BG;
+        
+        [self addRACSignal];
     }
     return self;
 }
@@ -113,6 +111,16 @@
         make.right.mas_offset(-20);
     }];
 //    self.address.text = @"石家庄市裕华区建设大街与二环交叉口润丰物流园A排001号";
+}
+
+- (void)addRACSignal{
+    [[RACObserve(self, model) filter:^BOOL(WAddressBook *object) {
+        return object != nil;
+    }] subscribeNext:^(WAddressBook *object) {
+        self.name.text = object.name;
+        self.phone.text = object.phone;
+        self.address.text = [NSString stringWithFormat:@"%@%@%@%@%@",object.province,object.city,object.district,object.street,object.detail];
+    }];
 }
 
 #pragma mark - Getter and Setter
@@ -201,6 +209,13 @@
         _defaultImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"my_address_book_default"]];
     }
     return _defaultImageView;
+}
+
+- (WAddressBook*)model{
+    if (_model == nil) {
+        _model = [[WAddressBook alloc] init];
+    }
+    return _model;
 }
 
 @end

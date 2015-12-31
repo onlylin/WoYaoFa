@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LAddressPicker.h"
+#import "WDefaultAddress.h"
 
 @interface WLineAndCompanyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,LAddressPickerDelegate>
 
@@ -30,5 +31,11 @@
 @property (nonatomic, strong) UITextField *textField;
 
 @property (nonatomic, strong) NSMutableArray *viewModels;
+
+@property (nonatomic, strong) UIImageView *beginImageView;
+
+@property (nonatomic, strong) UIImageView *endImageView;
+
+@property (nonatomic, strong) WDefaultAddress *defaultAddress;
 
 @end

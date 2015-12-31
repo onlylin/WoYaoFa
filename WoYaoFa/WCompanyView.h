@@ -27,6 +27,8 @@
 
 @property (nonatomic, strong) UILabel *volumeLabel;
 
+@property (nonatomic, strong) WCompany *model;
+
 - (id)initWithFrame:(CGRect)frame viewModel:(WCompany*)company;
 
 @end

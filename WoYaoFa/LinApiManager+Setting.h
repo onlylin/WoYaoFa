@@ -12,4 +12,6 @@
 
 - (RACSignal*)modifyUser:(WUser*)user;
 
+- (RACSignal*)uploadLogo:(UIImage*)image account:(NSInteger)accountId user:(NSInteger)userId;
+
 @end

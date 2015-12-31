@@ -1,0 +1,124 @@
+html {
+  font-size: 12px; }
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: auto; }
+
+body {
+  background: #f7f5f6;
+  font-size: 1rem; }
+
+.divider {
+  margin-top: 0.1rem; }
+
+.divider_block {
+  margin-top: 0.5rem; }
+
+.subtitle {
+  color: #727272; }
+
+.title_icon {
+  height: 1.25rem;
+  width: 1rem;
+  margin-right: 0.8rem;
+  display: block;
+  float: left; }
+
+.items {
+  background: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+comm_span span, #send_info span, #recepte_info span, #tip span, #logistics span {
+  height: 1.5rem;
+  line-height: 1.5rem; }
+
+#recepte_info {
+  margin-top: 0.1rem; }
+
+#tip {
+  margin-top: 0.5rem; }
+  #tip * {
+    display: block;
+    float: left; }
+
+#price,
+#express {
+  margin-top: 0.1rem; }
+  #price .info,
+  #express .info {
+    width: 26rem;
+    float: left; }
+    #price .info div,
+    #express .info div {
+      padding-top: 0.15rem;
+      padding-bottom: 0.15rem; }
+      #price .info div span,
+      #express .info div span {
+        height: 1.2rem;
+        line-height: 1.2rem; }
+    #price .info #freight,
+    #price .info #total_price,
+    #express .info #freight,
+    #express .info #total_price {
+      color: #fc0000; }
+
+#logistics {
+  margin-top: 0.5rem; }
+  #logistics * {
+    display: block;
+    float: left; }
+  #logistics #state {
+    float: right; }
+
+#company {
+  margin-top: 0.5rem;
+  margin-bottom: 3.8rem; }
+  #company img {
+    height: 5.25rem;
+    width: 5.25rem; }
+  #company .text {
+    margin-left: 0.5rem;
+    display: block;
+    float: left;
+    width: 20rem;
+    height: 5.25rem; }
+    #company .text #name {
+      height: 2.75rem;
+      line-height: 2.75rem; }
+  #company .arrow_icon {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: block;
+    float: right;
+    height: 1.25rem;
+    width: 0.9rem; }
+  #company .certificate {
+    width: 4.5rem;
+    height: 1.25rem;
+    margin-right: 1rem; }
+
+#navButton {
+  width: 100%;
+  height: 3.8rem;
+  position: fixed;
+  bottom: 0; }
+  #navButton span {
+    display: block;
+    float: left;
+    line-height: 3.8rem;
+    text-align: center;
+    height: 3.8rem;
+    width: 33%;
+    color: #fff;
+    background: #605e5f; }
+  #navButton #claim {
+    margin-left: 0.5%;
+    margin-right: 0.5%; }
+
+/*# sourceMappingURL=order_detail.css.map */

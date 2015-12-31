@@ -14,6 +14,7 @@
 @end
 
 @implementation WRegisterViewController
+@synthesize style;
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
@@ -48,16 +49,29 @@
 - (void)viewDidAppear:(BOOL)animated{
     @weakify(self)
     [self.codeButton addTouchHandle:^(LCountDownButton *countDownButton, NSInteger tag) {
-        @strongify(self)
-        RACSignal *signal = [[LinApiManager shareInstance] validPhone:self.phoneField.text];
-        [[signal filter:^BOOL(LDataResult *dataResult) {
-            [MBProgressHUD showTextOnly:dataResult.msg];
-            return dataResult.code == ResponseStatusOk;
-        }] subscribeNext:^(id x) {
+        if (style == WViewControllerStyleModifyPassword) {
+            //修改密码
             //获取验证码
+            @strongify(self)
             [self getVerificationCode:countDownButton tag:tag];
-        }];
+        }else if(style == WViewControllerStyleRegister){
+            //注册
+            @strongify(self)
+            RACSignal *signal = [[LinApiManager shareInstance] validPhone:self.phoneField.text];
+            [[signal filter:^BOOL(LDataResult *dataResult) {
+                [MBProgressHUD showTextOnly:dataResult.msg];
+                return dataResult.code == ResponseStatusOk;
+            }] subscribeNext:^(id x) {
+                //获取验证码
+                [self getVerificationCode:countDownButton tag:tag];
+            }];
+        }
     }];
+    
+//    if (style == WViewControllerStyleModifyPassword) {
+//        self.phoneField.text = @"15157119546";
+//        self.phoneField.userInteractionEnabled = NO;
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,9 +159,12 @@
                             self.phoneField.rac_textSignal
                         ]
                         reduce:^id(NSString *phone){
-                            NSNumber *enabled = @(phone.length == 11);
-                            self.codeButton.alpha = 0.5 + [enabled integerValue];
-                            return enabled;
+                            if (style == WViewControllerStyleRegister) {
+                                NSNumber *enabled = @(phone.length == 11);
+                                self.codeButton.alpha = 0.5 + [enabled integerValue];
+                                return enabled;
+                            }
+                            return @(1);
                         }];
     
     self.registerButton.rac_command = [[RACCommand alloc]
@@ -166,7 +183,13 @@
                     WAccount *account = [[WAccount alloc] init];
                     account.name = self.phoneField.text;
                     account.password = self.passwordField.text.MD5;
-                    return [[LinApiManager shareInstance] registerAccount:account code:self.codeField.text appkey:MOB_SMS_APPKEY];
+                    if (style == WViewControllerStyleRegister) {
+                        return [[LinApiManager shareInstance] registerAccount:account code:self.codeField.text appkey:MOB_SMS_APPKEY];
+                    }else if (style == WViewControllerStyleModifyPassword){
+                        return [[LinApiManager shareInstance] resetPwd:account code:self.codeField.text appKey:MOB_SMS_APPKEY];
+                    }else{
+                        return [RACSignal empty];
+                    }
                 }];
     
     [self.registerButton.rac_command.executionSignals subscribeNext:^(RACSignal *signal) {

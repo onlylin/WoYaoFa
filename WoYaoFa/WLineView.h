@@ -37,6 +37,8 @@
 
 @property (nonatomic, strong) UILabel *volumeLabel;
 
+@property (nonatomic, strong) WLine *model;
+
 
 -(id)initWithFrame:(CGRect)frame viewModel:(WLine*)line;
 

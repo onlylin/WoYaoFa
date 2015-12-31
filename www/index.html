@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="index">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/jquery.slideBox.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/index.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body ng-controller="IndexController">
+    <div id="carousel" class="slideBox">
+        <ul class="items" id="carousel_list">
+            <li>
+                <img src="img/ionic.png" alt="" />
+            </li>
+            <li>
+                <img src="img/ionic.png" alt="" />
+            </li>
+            <li>
+                <img src="img/ionic.png" alt="" />
+            </li>
+        </ul>
+    </div>
+
+    <div class="" id="item">
+        <div class="" id="item_find_logistics">
+            <img src="img/logistic_green.png" alt="" />
+            <p>
+                找物流
+            </p>
+        </div>
+        <div class="" id="item_find_express">
+            <img src="img/express.png" alt="" />
+            <p>
+                发快递
+            </p>
+        </div>
+    </div>
+    <div class="" id="search">
+        <div class="" id="search_logistics">
+            <span>物流查询</span>
+        </div>
+        <div class="" id="search_express">
+            <span>快递查询</span>
+        </div>
+    </div>
+    <div class="" id="search_keyword">
+        <img src="img/waybill.png" alt="" />
+        <input type="text" name="keyword" placeholder="请输入运单号" ng-model="keyword">
+    </div>
+    <button id="submit" type="button" name="">查询</button>
+    <span ng-bind="keyword"></span>
+</body>
+<script src="js/base.js" charset="utf-8"></script>
+<script src="js/jquery.js" charset="utf-8"></script>
+<script src="js/jquery.slideBox.js" charset="utf-8"></script>
+<script src="js/angular.js" charset="utf-8"></script>
+<script src="js/WebViewJavascriptBridge.js" charset="utf-8"></script>
+<script src="js/index.js" charset="utf-8"></script>
+
+</html>

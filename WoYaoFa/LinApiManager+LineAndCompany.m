@@ -56,8 +56,10 @@ static NSString *LIST_LINE_ACTION = @"webapi/lines/list";
                              @"begin" : begin,
                              @"end" : end
                              };
+    NSLog(@"%@",params);
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [self sendPost:url params:params success:^(LinBaseRequest *request) {
+            NSLog(@"%@",request.responseJSONObject);
             [subscriber sendNext:[LDataResult mj_objectWithKeyValues:request.responseJSONObject]];
             [subscriber sendCompleted];
         } failure:^(LinBaseRequest *request) {

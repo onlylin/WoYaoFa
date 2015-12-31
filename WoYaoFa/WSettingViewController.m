@@ -11,6 +11,9 @@
 #import "WSettingView.h"
 #import "LinApiManager+Setting.h"
 #import "WEditNameViewController.h"
+#import "MLSelectPhotoPickerViewController.h"
+#import "WSecurityViewController.h"
+#import "UIImage+LImage.h"
 
 @interface WSettingViewController ()<HZActionSheetDelegate>
 
@@ -82,6 +85,9 @@
         case 0:
         {
             view = [[WSettingView alloc] initWithFrame:cell.bounds viewRole:WSettingViewRoleLogo viewModel:self.user];
+            [RACObserve(self.user, logo) subscribeNext:^(id x) {
+                [view updateViewModel:self.user role:WSettingViewRoleLogo];
+            }];
             break;
         }
         case 1:
@@ -122,6 +128,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
+        case 0:
+        {
+            HZActionSheet *actionSheet = [[HZActionSheet alloc] initWithTitle:@"头像选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonIndexSet:nil otherButtonTitles:@[@"拍照",@"相册"]];
+            actionSheet.tag = 0;
+            [actionSheet showInView:self.view];
+            break;
+        }
         case 1:
         {
             //注册修改昵称的通知
@@ -136,12 +149,19 @@
         case 2:
         {
             HZActionSheet *actionSheet = [[HZActionSheet alloc] initWithTitle:@"选择性别" delegate:self cancelButtonTitle:@"取消" destructiveButtonIndexSet:nil otherButtonTitles:@[@"男",@"女"]];
+            actionSheet.tag = 1;
             [actionSheet showInView:self.view];
             break;
         }
         case 3:
         {
             [self.textField becomeFirstResponder];
+            break;
+        }
+        case 4:
+        {
+            WSecurityViewController *viewController = [[WSecurityViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
             
@@ -156,20 +176,65 @@
 
 #pragma mark - HZActionSheetDelegate
 - (void)actionSheet:(HZActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != 2) {
-        WUser *modifyUser = [[WUser alloc] init];
-        modifyUser.ID = self.user.ID;
-        modifyUser.sex = buttonIndex;
-        RACSignal *signal = [[LinApiManager shareInstance] modifyUser:modifyUser];
-        [[signal filter:^BOOL(LDataResult *dataResult) {
-            [MBProgressHUD showTextOnly:dataResult.msg];
-            return dataResult.code == ResponseStatusOk;
-        }] subscribeNext:^(LDataResult *dataResult) {
-            self.user.sex = modifyUser.sex;
-        } completed:^{
-            
-        }];
+    if (actionSheet.tag == 0) {
+        if (buttonIndex != 2) {
+            NSUInteger sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                if (buttonIndex == 0) {
+                    //相机
+                    sourceType = UIImagePickerControllerSourceTypeCamera;
+                }else if (buttonIndex == 1){
+                    //相册
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                }
+            }else{
+                if (buttonIndex == 0) {
+                    return;
+                } else {
+                    sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                }
+            }
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = self;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = sourceType;
+            [self presentViewController:imagePickerController animated:YES completion:^{}];
+        }
+    }else{
+        if (buttonIndex != 2) {
+            WUser *modifyUser = [[WUser alloc] init];
+            modifyUser.ID = self.user.ID;
+            modifyUser.sex = buttonIndex;
+            RACSignal *signal = [[LinApiManager shareInstance] modifyUser:modifyUser];
+            [[signal filter:^BOOL(LDataResult *dataResult) {
+                [MBProgressHUD showTextOnly:dataResult.msg];
+                return dataResult.code == ResponseStatusOk;
+            }] subscribeNext:^(LDataResult *dataResult) {
+                self.user.sex = modifyUser.sex;
+            } completed:^{
+                
+            }];
+        }
     }
+}
+
+#pragma mark - UIImagePickerController Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    CGFloat imageHight = SCREEN.width;
+    if (image.size.height < imageHight) {
+        imageHight = image.size.height;
+    }
+    //压缩图片
+    UIImage *smallImage = [image scaledToSize:CGSizeMake(SCREEN.width, imageHight)];
+    RACSignal *signal = [[LinApiManager shareInstance] uploadLogo:smallImage account:33 user:3];
+    [[signal filter:^BOOL(LDataResult *dataResult) {
+        [MBProgressHUD showTextOnly:dataResult.msg];
+        return dataResult.code == ResponseStatusOk;
+    }] subscribeNext:^(LDataResult *dataResult) {
+        self.user.logo = dataResult.datas;
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UIDateView Delegate

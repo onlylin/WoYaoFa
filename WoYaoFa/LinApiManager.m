@@ -73,4 +73,29 @@
     }];
 }
 
+/**
+ *  图片上传
+ *
+ *  @param url      上传地址
+ *  @param formData 图片文件
+ *  @param params   提交参数
+ *  @param success  上传成功回调
+ *  @param failure  上传失败回调
+ */
+- (void)uploadImage:(NSString *)url formDatas:(NSArray*)formDatas params:(id)params success:(void (^)(LinBaseRequest *))success failure:(void (^)(LinBaseRequest *))failure{
+    NSLog(@"文件上传");
+    LinMutipartRequest *request = [[LinMutipartRequest alloc] init];
+    request.url = url;
+    request.mimeType = LinMutipartRequestMimeTypeImageAndPng;
+    request.arguments = params;
+    request.formDatas = formDatas;
+    _successBlock = success;
+    _failureBlock = failure;
+    [request startWithCompletionBlockWithSuccess:^(LinBaseRequest *request) {
+        success(request);
+    } failure:^(LinBaseRequest *request) {
+        failure(request);
+    }];
+}
+
 @end

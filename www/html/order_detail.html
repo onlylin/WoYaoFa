@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no, width=device-width">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../css/order_detail.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div id="send_info" class="items">
+        <div ><span class="subtitle">发件人：</span><span id="sender">张超超 12345678900</span></div>
+        <div class="secend_box"><span class="subtitle">地&nbsp;&nbsp;&nbsp;&nbsp;址：</span><span id="sender_address" class="address">xx市xx县xx街道</span></div>
+    </div>
+    <div id="recepte_info" class="items">
+        <div ><span class="subtitle">发件人：</span><span id="recepter">张超超 12345678900</span></div>
+        <div class="secend_box"><span class="subtitle">地&nbsp;&nbsp;&nbsp;&nbsp;址：</span><span id="recepter_address" class="address">xx市xx县xx街道</span></div>
+    </div>
+    <div id="tip" class="items">
+        <img src="../img/goods.png" alt="" class="title_icon" /><span class="subtitle">货物信息：</span><span id="recepter">物品易碎，小心运输</span>
+    </div>
+    <div id="price" class="items">
+        <img src="../img/price_yuan.png" alt="" class="title_icon" />
+        <div class="info">
+            <div><span class="subtitle">总&nbsp;&nbsp;运&nbsp;&nbsp;费：</span><span id="freight">5000.00</span><span>元</span></div>
+            <div><span class="subtitle">上门取货：</span><span id="visiting_fee">30.00</span><span>元</span></div>
+            <div><span class="subtitle">上门送货：</span><span id="delivery_charge">5000.00</span><span>元</span></div>
+            <div><span class="subtitle">总&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计：</span><span id="total_price">10030.00</span><span>元</span></div>
+        </div>
+    </div>
+    <div id="logistics" class="items">
+        <img src="../img/waybill_green.png" alt="" class="title_icon" /><span class="subtitle">物流跟踪</span><span id="state" class="subtitle">待收货</span>
+    </div>
+    <div id="express" class="items">
+        <span  alt="" class="title_icon"></span>
+        <div class="info">
+            <div><span class="subtitle">运&nbsp;&nbsp;单&nbsp;&nbsp;号：</span><span id="waybill_number">12345678900</span></div>
+            <div><span class="subtitle">下单时间：</span><span id="place_an_order">3012345678900</span></div>
+            <div><span class="subtitle">预约时间：</span><span id="appointment">500012345678900</span></div>
+            <div><span class="subtitle">受理时间：</span><span id="dispose">500012345678900</span></div>
+            <div><span class="subtitle">发货时间：</span><span id="send">5000123456789000</span></div>
+        </div>
+    </div>
+    <div id="company" class="items">
+        <img src="../img/ionic.png" alt="" class="title_icon" />
+        <div class="text">
+            <span id="name">zhongtongkeji</span>
+            <div class="">
+                <img src="../img/ionic.png" alt="" class="certificate" />
+                <img src="../img/ionic.png" alt="" class="certificate" />
+            </div>
+        </div>
+        <img src="../img/arrow_gray_right.png" alt="" class="arrow_icon" />
+    </div>
+    <div id="navButton" class="navButton">
+        <span class="">联系电话</span>
+        <span id="claim" >申请理赔</span>
+        <span >确认到货</span>
+    </div>
+    <script src="../js/base.js" charset="utf-8"></script>
+    <script src="../js/jquery.js" charset="utf-8"></script>
+    <script src="../js/angular.js" charset="utf-8"></script>
+    <script src="../js/order_detail.js" charset="utf-8"></script>
+</body>
+
+</html>

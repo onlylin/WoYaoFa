@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '28FEE5325E60E12EF75EBCA1'
+               BlueprintIdentifier = '292E51A1596E9F1F7A5C40B0'
                BlueprintName = 'HZActionSheet'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libHZActionSheet.a'>

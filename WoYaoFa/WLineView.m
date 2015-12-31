@@ -41,6 +41,7 @@
         self.volumeLabel.text = [NSString stringWithFormat:@"成交量 : %ld",line.volume];
         
         self.backgroundColor = [UIColor whiteColor];
+        self.model = line;
     }
     return self;
 }

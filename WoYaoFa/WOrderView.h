@@ -10,6 +10,17 @@
 #import "UILabel+LLabel.h"
 #import "WOrder.h"
 
+@class WOrderView;
+
+@protocol WOrderViewDelegate <NSObject>
+
+@optional
+- (void)clickLeftButton:(OrderStatus)orderStatus viewModel:(WOrderView*)viewModel;
+- (void)clickRight1Button:(OrderStatus)orderStatus viewModel:(WOrderView*)viewModel;
+- (void)clickRight2Button:(OrderStatus)orderStatus viewModel:(WOrderView*)viewModel;
+
+@end
+
 @interface WOrderView : UIView
 
 @property (nonatomic, strong) UIView *headerView;
@@ -60,7 +71,11 @@
 
 @property (nonatomic, strong) UIButton *right2Button;
 
+@property (nonatomic, strong) WOrder *model;
 
-- (id)initWithFrame:(CGRect)frame viewModel:(WOrder*)order;
+@property (nonatomic, weak) id<WOrderViewDelegate> delegate;
+
+
+- (id)initWithFrame:(CGRect)frame;
 
 @end

@@ -29,4 +29,9 @@ static NSString *WNotficationNikname = @"nikname";
  */
 static NSString *WNotficationUpdateUser = @"updateUser";
 
+/**
+ *  发/收货地址选择通知
+ */
+static NSString *WNotificationSelectAddress = @"selectAddress";
+
 #endif /* WNotification_h */

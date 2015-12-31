@@ -14,4 +14,12 @@
 
 - (RACSignal*)getOrders:(NSInteger)accountId orderStatus:(OrderStatus)status pageIndex:(NSInteger)pageIndex pageSize:(NSInteger)pageSize;
 
+- (RACSignal*)addOrder:(WOrder*)order;
+
+- (RACSignal*)cancelOrder:(NSInteger)orderId orderStatus:(OrderStatus)status;
+
+- (RACSignal*)confirmOrder:(NSInteger)orderId;
+
+- (RACSignal*)uploadImages:(NSArray*)images ordre:(NSInteger)orderId;
+
 @end

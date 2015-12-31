@@ -11,6 +11,9 @@
 #import "WSettingViewController.h"
 #import "WLoginNavigation.h"
 #import "WLineAndCompanyViewController.h"
+#import "WPlaceOrderViewController.h"
+#import "WFeedbackViewController.h"
+#import "WCollectionsViewController.h"
 
 @interface WProfileViewController ()
 
@@ -46,8 +49,13 @@
     self.tableView.backgroundColor = VIEW_BG;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [self setHidesBottomBarWhenPushed:YES];
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     [self.navigationController.navigationBar setHidden:NO];
+    [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,13 +117,20 @@
         }
         case 1:
         {
-            WSettingViewController *viewController = [[WSettingViewController alloc] init];
+            WCollectionsViewController *viewController = [[WCollectionsViewController alloc] init];
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
         case 2:
         {
-            
+            WPlaceOrderViewController *viewController = [[WPlaceOrderViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case 3:
+        {
+            WFeedbackViewController *viewController = [[WFeedbackViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
         default:

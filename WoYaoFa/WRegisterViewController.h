@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "LCountDownButton.h"
 
+typedef NS_ENUM(NSInteger,WViewControllerStyle) {
+    WViewControllerStyleModifyPassword,
+    WViewControllerStyleRegister
+};
+
 @interface WRegisterViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -26,5 +31,7 @@
 @property (nonatomic, strong) UIButton *registerButton;
 
 @property (nonatomic, strong) UIView *footerView;
+
+@property (nonatomic, assign) WViewControllerStyle style;
 
 @end

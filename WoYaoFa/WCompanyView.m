@@ -42,6 +42,8 @@
         
         
         self.backgroundColor = [UIColor whiteColor];
+        
+        self.model = company;
     }
     return self;
 }

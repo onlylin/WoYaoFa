@@ -8,16 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		298558AB1202074366CB41CD /* libPods-WoYaoFa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D05CAFA9B83E73D7012224 /* libPods-WoYaoFa.a */; };
+		321A3BD41C224186009ADD06 /* WPlaceOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A3BD31C224186009ADD06 /* WPlaceOrderView.m */; };
+		321A3BDC1C225E68009ADD06 /* UITextView+placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A3BDB1C225E68009ADD06 /* UITextView+placeholder.m */; };
+		321A3BDE1C225FF4009ADD06 /* logistics_add_images@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321A3BDD1C225FF4009ADD06 /* logistics_add_images@2x.png */; };
 		322ACB3B1C1E575000141B19 /* WCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB3A1C1E575000141B19 /* WCompany.m */; };
 		322ACB3F1C1E890100141B19 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB3E1C1E890100141B19 /* UIAlertView+Blocks.m */; };
 		322ACB421C1E8A0700141B19 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB411C1E8A0700141B19 /* RIButtonItem.m */; };
 		322ACB461C1E9D0200141B19 /* LinApiManager+Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB451C1E9D0200141B19 /* LinApiManager+Setting.m */; };
 		322ACB4A1C1EA5B600141B19 /* UIDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB491C1EA5B600141B19 /* UIDateView.m */; };
 		322ACB4E1C1EAA1400141B19 /* WEditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322ACB4D1C1EAA1400141B19 /* WEditNameViewController.m */; };
+		322C4B331C2B996D00FC4320 /* WCompanyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322C4B321C2B996D00FC4320 /* WCompanyDetailViewController.m */; };
+		322C4B371C2BB94800FC4320 /* WLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 322C4B361C2BB94800FC4320 /* WLineViewController.m */; };
+		323420DE1C34CA4600A50E4A /* an@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323420DD1C34CA4600A50E4A /* an@2x.png */; };
+		323420E11C34D03800A50E4A /* choose_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 323420E01C34D03800A50E4A /* choose_icon@2x.png */; };
+		323420E41C34DFFF00A50E4A /* WDefaultAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 323420E31C34DFFF00A50E4A /* WDefaultAddress.m */; };
 		32430BF81C1A6C42007AB978 /* WOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430BF71C1A6C42007AB978 /* WOrdersViewController.m */; };
 		32430BFC1C1A6D5D007AB978 /* WOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430BFB1C1A6D5D007AB978 /* WOrderView.m */; };
 		32430BFF1C1A6D79007AB978 /* WOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430BFE1C1A6D79007AB978 /* WOrder.m */; };
 		32430C021C1A7019007AB978 /* order_logistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32430C011C1A7019007AB978 /* order_logistics@2x.png */; };
+		325AD1741C30D06300A8F342 /* WAddressBookAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325AD1731C30D06300A8F342 /* WAddressBookAddViewController.m */; };
+		325AD1811C311BAC00A8F342 /* WCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325AD1801C311BAC00A8F342 /* WCommentListViewController.m */; };
+		325AD1851C31235700A8F342 /* WCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325AD1841C31235700A8F342 /* WCommentView.m */; };
 		3273B7E81C12714300597049 /* WHomeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3273B7E71C12714300597049 /* WHomeNavigation.m */; };
 		3273B7ED1C12718000597049 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3273B7EC1C12718000597049 /* WHomeViewController.m */; };
 		3273B7F51C1271D900597049 /* WProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3273B7F41C1271D900597049 /* WProfileViewController.m */; };
@@ -41,6 +52,14 @@
 		3273B8211C12800500597049 /* order_choose.png in Resources */ = {isa = PBXBuildFile; fileRef = 3273B8181C12800500597049 /* order_choose.png */; };
 		3273B8221C12800500597049 /* order_choose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3273B8191C12800500597049 /* order_choose@2x.png */; };
 		3273B8231C12800500597049 /* order_choose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3273B81A1C12800500597049 /* order_choose@3x.png */; };
+		3283DD941C32726E006B75B2 /* WCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283DD931C32726E006B75B2 /* WCollectionsViewController.m */; };
+		3283DD981C3276C3006B75B2 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283DD971C3276C3006B75B2 /* CollectionView.m */; };
+		3283DD9B1C327CE8006B75B2 /* CollectionLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283DD9A1C327CE8006B75B2 /* CollectionLineView.m */; };
+		328684D71C3371F400C7262F /* LinApiManager+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 328684D61C3371F400C7262F /* LinApiManager+Collection.m */; };
+		328684DA1C33720A00C7262F /* WCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 328684D91C33720A00C7262F /* WCollection.m */; };
+		328684DF1C33A06E00C7262F /* LLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 328684DE1C33A06E00C7262F /* LLocationService.m */; };
+		328684E21C33A13500C7262F /* LLMapBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 328684E11C33A13500C7262F /* LLMapBaseService.m */; };
+		328684E61C33B8D000C7262F /* LLGeoCodeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 328684E51C33B8D000C7262F /* LLGeoCodeService.m */; };
 		328707A81C1524800098296E /* WAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707A71C1524800098296E /* WAddressBookViewController.m */; };
 		328707AE1C1525510098296E /* WAddressBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707AD1C1525510098296E /* WAddressBookView.m */; };
 		328707B31C1526E00098296E /* UILabel+LLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707B21C1526E00098296E /* UILabel+LLabel.m */; };
@@ -50,6 +69,12 @@
 		328707CB1C156B900098296E /* WSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707CA1C156B900098296E /* WSettingView.m */; };
 		328707D51C1582F30098296E /* my_set_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328707D41C1582F30098296E /* my_set_up@2x.png */; };
 		328707D91C1584F20098296E /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 328707D81C1584F20098296E /* UIViewExt.m */; };
+		32897DB21C264A6B00BDDE08 /* WFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32897DB11C264A6B00BDDE08 /* WFeedbackViewController.m */; };
+		32897DB61C264ED100BDDE08 /* WCancelOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32897DB51C264ED100BDDE08 /* WCancelOrderViewController.m */; };
+		328E26A71C27952B0073905F /* LinApiManager+Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 328E26A61C27952B0073905F /* LinApiManager+Feedback.m */; };
+		328E26AB1C27A84E0073905F /* LinApiManager+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 328E26AA1C27A84E0073905F /* LinApiManager+Comment.m */; };
+		328E26AE1C27A8770073905F /* WComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 328E26AD1C27A8770073905F /* WComment.m */; };
+		328E26B21C27C7540073905F /* WPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328E26B11C27C7540073905F /* WPaymentViewController.m */; };
 		329315171C192588009AF33D /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 329315161C192588009AF33D /* bg.png */; };
 		3293151A1C1927B5009AF33D /* WLoginNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 329315191C1927B5009AF33D /* WLoginNavigation.m */; };
 		3293151D1C1930F6009AF33D /* WLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3293151C1C1930F6009AF33D /* WLoginViewController.m */; };
@@ -77,6 +102,8 @@
 		32951DFE1C1FF4A2004260AE /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32951DFD1C1FF4A2004260AE /* address.plist */; };
 		32951E021C1FF507004260AE /* LAddressPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951E011C1FF507004260AE /* LAddressPicker.m */; };
 		32951E061C200BDA004260AE /* WPlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32951E051C200BDA004260AE /* WPlaceOrderViewController.m */; };
+		32995F831C23A6FC008A8891 /* WSelectAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32995F821C23A6FC008A8891 /* WSelectAddressViewController.m */; };
+		32995F871C23E59D008A8891 /* WCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32995F861C23E59D008A8891 /* WCommentViewController.m */; };
 		32B16E0C1C117BD400865247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0B1C117BD400865247 /* main.m */; };
 		32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B16E0E1C117BD400865247 /* AppDelegate.m */; };
 		32B16E181C117BD400865247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B16E161C117BD400865247 /* Main.storyboard */; };
@@ -93,6 +120,16 @@
 		32BB86181C18164D008016A4 /* WUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB86171C18164D008016A4 /* WUser.m */; };
 		32BB861B1C181800008016A4 /* WAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB861A1C181800008016A4 /* WAddressBook.m */; };
 		32BB86201C181996008016A4 /* LinApiManager+AddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB861F1C181996008016A4 /* LinApiManager+AddressBook.m */; };
+		32BFB60D1C28FF3600B246F0 /* UIImage+LImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFB60C1C28FF3600B246F0 /* UIImage+LImage.m */; };
+		32BFB6111C29052200B246F0 /* LinMutipartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFB6101C29052200B246F0 /* LinMutipartRequest.m */; };
+		32C4EA341C2A413D005B88F6 /* WSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C4EA331C2A413D005B88F6 /* WSecurityViewController.m */; };
+		32C4EA361C2A427E005B88F6 /* my_set_up_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C4EA351C2A427E005B88F6 /* my_set_up_password@2x.png */; };
+		32C4EA381C2A4467005B88F6 /* my_set_up_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C4EA371C2A4467005B88F6 /* my_set_up_phone@2x.png */; };
+		32C4EA3B1C2A4B2E005B88F6 /* WChangePhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C4EA3A1C2A4B2E005B88F6 /* WChangePhoneViewController.m */; };
+		32C4EA3D1C2A64A2005B88F6 /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 32C4EA3C1C2A64A2005B88F6 /* ExampleApp.html */; };
+		32C4EAF11C2A776B005B88F6 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 32C4EAF01C2A776B005B88F6 /* www */; };
+		32C4EAF51C2A7EDE005B88F6 /* WCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C4EAF41C2A7EDE005B88F6 /* WCompanyViewController.m */; };
+		32C4EAF81C2A7F36005B88F6 /* UIWebView+LWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C4EAF71C2A7F36005B88F6 /* UIWebView+LWebView.m */; };
 		32C6B7AF1C13320F00A70EE1 /* my_opinion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B7AB1C13320F00A70EE1 /* my_opinion@2x.png */; };
 		32C6B7B01C13320F00A70EE1 /* my_order_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B7AC1C13320F00A70EE1 /* my_order_history@2x.png */; };
 		32C6B7B11C13320F00A70EE1 /* my_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B7AD1C13320F00A70EE1 /* my_phone@2x.png */; };
@@ -128,6 +165,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		321A3BD21C224186009ADD06 /* WPlaceOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPlaceOrderView.h; sourceTree = "<group>"; };
+		321A3BD31C224186009ADD06 /* WPlaceOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPlaceOrderView.m; sourceTree = "<group>"; };
+		321A3BDA1C225E68009ADD06 /* UITextView+placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+placeholder.h"; sourceTree = "<group>"; };
+		321A3BDB1C225E68009ADD06 /* UITextView+placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+placeholder.m"; sourceTree = "<group>"; };
+		321A3BDD1C225FF4009ADD06 /* logistics_add_images@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logistics_add_images@2x.png"; sourceTree = "<group>"; };
 		322ACB391C1E575000141B19 /* WCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCompany.h; sourceTree = "<group>"; };
 		322ACB3A1C1E575000141B19 /* WCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCompany.m; sourceTree = "<group>"; };
 		322ACB3D1C1E890100141B19 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
@@ -140,6 +182,14 @@
 		322ACB491C1EA5B600141B19 /* UIDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDateView.m; sourceTree = "<group>"; };
 		322ACB4C1C1EAA1400141B19 /* WEditNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEditNameViewController.h; sourceTree = "<group>"; };
 		322ACB4D1C1EAA1400141B19 /* WEditNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEditNameViewController.m; sourceTree = "<group>"; };
+		322C4B311C2B996D00FC4320 /* WCompanyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCompanyDetailViewController.h; sourceTree = "<group>"; };
+		322C4B321C2B996D00FC4320 /* WCompanyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCompanyDetailViewController.m; sourceTree = "<group>"; };
+		322C4B351C2BB94800FC4320 /* WLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLineViewController.h; sourceTree = "<group>"; };
+		322C4B361C2BB94800FC4320 /* WLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLineViewController.m; sourceTree = "<group>"; };
+		323420DD1C34CA4600A50E4A /* an@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "an@2x.png"; sourceTree = "<group>"; };
+		323420E01C34D03800A50E4A /* choose_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choose_icon@2x.png"; sourceTree = "<group>"; };
+		323420E21C34DFFF00A50E4A /* WDefaultAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDefaultAddress.h; sourceTree = "<group>"; };
+		323420E31C34DFFF00A50E4A /* WDefaultAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDefaultAddress.m; sourceTree = "<group>"; };
 		32430BF61C1A6C42007AB978 /* WOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOrdersViewController.h; sourceTree = "<group>"; };
 		32430BF71C1A6C42007AB978 /* WOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOrdersViewController.m; sourceTree = "<group>"; tabWidth = 5; };
 		32430BFA1C1A6D5D007AB978 /* WOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOrderView.h; sourceTree = "<group>"; };
@@ -147,6 +197,12 @@
 		32430BFD1C1A6D79007AB978 /* WOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOrder.h; sourceTree = "<group>"; };
 		32430BFE1C1A6D79007AB978 /* WOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOrder.m; sourceTree = "<group>"; };
 		32430C011C1A7019007AB978 /* order_logistics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_logistics@2x.png"; sourceTree = "<group>"; };
+		325AD1721C30D06300A8F342 /* WAddressBookAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAddressBookAddViewController.h; sourceTree = "<group>"; };
+		325AD1731C30D06300A8F342 /* WAddressBookAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAddressBookAddViewController.m; sourceTree = "<group>"; };
+		325AD17F1C311BAC00A8F342 /* WCommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCommentListViewController.h; sourceTree = "<group>"; };
+		325AD1801C311BAC00A8F342 /* WCommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCommentListViewController.m; sourceTree = "<group>"; };
+		325AD1831C31235700A8F342 /* WCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCommentView.h; sourceTree = "<group>"; };
+		325AD1841C31235700A8F342 /* WCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCommentView.m; sourceTree = "<group>"; };
 		3273B7E61C12714300597049 /* WHomeNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeNavigation.h; sourceTree = "<group>"; };
 		3273B7E71C12714300597049 /* WHomeNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHomeNavigation.m; sourceTree = "<group>"; };
 		3273B7EB1C12718000597049 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
@@ -175,6 +231,24 @@
 		3273B8181C12800500597049 /* order_choose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_choose.png; sourceTree = "<group>"; };
 		3273B8191C12800500597049 /* order_choose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_choose@2x.png"; sourceTree = "<group>"; };
 		3273B81A1C12800500597049 /* order_choose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_choose@3x.png"; sourceTree = "<group>"; };
+		3283DD921C32726E006B75B2 /* WCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCollectionsViewController.h; sourceTree = "<group>"; };
+		3283DD931C32726E006B75B2 /* WCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCollectionsViewController.m; sourceTree = "<group>"; };
+		3283DD961C3276C3006B75B2 /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
+		3283DD971C3276C3006B75B2 /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
+		3283DD991C327CE8006B75B2 /* CollectionLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionLineView.h; sourceTree = "<group>"; };
+		3283DD9A1C327CE8006B75B2 /* CollectionLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionLineView.m; sourceTree = "<group>"; };
+		328684D51C3371F400C7262F /* LinApiManager+Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+Collection.h"; sourceTree = "<group>"; };
+		328684D61C3371F400C7262F /* LinApiManager+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+Collection.m"; sourceTree = "<group>"; };
+		328684D81C33720A00C7262F /* WCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCollection.h; sourceTree = "<group>"; };
+		328684D91C33720A00C7262F /* WCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCollection.m; sourceTree = "<group>"; };
+		328684DB1C337F2A00C7262F /* CollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDelegate.h; sourceTree = "<group>"; };
+		328684DD1C33A06E00C7262F /* LLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLocationService.h; sourceTree = "<group>"; };
+		328684DE1C33A06E00C7262F /* LLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLocationService.m; sourceTree = "<group>"; };
+		328684E01C33A13500C7262F /* LLMapBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMapBaseService.h; sourceTree = "<group>"; };
+		328684E11C33A13500C7262F /* LLMapBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMapBaseService.m; sourceTree = "<group>"; };
+		328684E31C33A87300C7262F /* AMapKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMapKey.h; sourceTree = "<group>"; };
+		328684E41C33B8D000C7262F /* LLGeoCodeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGeoCodeService.h; sourceTree = "<group>"; };
+		328684E51C33B8D000C7262F /* LLGeoCodeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGeoCodeService.m; sourceTree = "<group>"; };
 		328707A61C1524800098296E /* WAddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAddressBookViewController.h; sourceTree = "<group>"; };
 		328707A71C1524800098296E /* WAddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAddressBookViewController.m; sourceTree = "<group>"; };
 		328707AC1C1525510098296E /* WAddressBookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAddressBookView.h; sourceTree = "<group>"; };
@@ -191,6 +265,18 @@
 		328707D41C1582F30098296E /* my_set_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_set_up@2x.png"; sourceTree = "<group>"; };
 		328707D71C1584F20098296E /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		328707D81C1584F20098296E /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		32897DB01C264A6B00BDDE08 /* WFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFeedbackViewController.h; sourceTree = "<group>"; };
+		32897DB11C264A6B00BDDE08 /* WFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFeedbackViewController.m; sourceTree = "<group>"; };
+		32897DB41C264ED100BDDE08 /* WCancelOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCancelOrderViewController.h; sourceTree = "<group>"; };
+		32897DB51C264ED100BDDE08 /* WCancelOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCancelOrderViewController.m; sourceTree = "<group>"; };
+		328E26A51C27952B0073905F /* LinApiManager+Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+Feedback.h"; sourceTree = "<group>"; };
+		328E26A61C27952B0073905F /* LinApiManager+Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+Feedback.m"; sourceTree = "<group>"; };
+		328E26A91C27A84E0073905F /* LinApiManager+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+Comment.h"; sourceTree = "<group>"; };
+		328E26AA1C27A84E0073905F /* LinApiManager+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+Comment.m"; sourceTree = "<group>"; };
+		328E26AC1C27A8770073905F /* WComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WComment.h; sourceTree = "<group>"; };
+		328E26AD1C27A8770073905F /* WComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WComment.m; sourceTree = "<group>"; };
+		328E26B01C27C7540073905F /* WPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPaymentViewController.h; sourceTree = "<group>"; };
+		328E26B11C27C7540073905F /* WPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPaymentViewController.m; sourceTree = "<group>"; };
 		329315161C192588009AF33D /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		329315181C1927B5009AF33D /* WLoginNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLoginNavigation.h; sourceTree = "<group>"; };
 		329315191C1927B5009AF33D /* WLoginNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLoginNavigation.m; sourceTree = "<group>"; };
@@ -232,6 +318,10 @@
 		32951E011C1FF507004260AE /* LAddressPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAddressPicker.m; sourceTree = "<group>"; };
 		32951E041C200BDA004260AE /* WPlaceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPlaceOrderViewController.h; sourceTree = "<group>"; };
 		32951E051C200BDA004260AE /* WPlaceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPlaceOrderViewController.m; sourceTree = "<group>"; };
+		32995F811C23A6FC008A8891 /* WSelectAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSelectAddressViewController.h; sourceTree = "<group>"; };
+		32995F821C23A6FC008A8891 /* WSelectAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSelectAddressViewController.m; sourceTree = "<group>"; };
+		32995F851C23E59D008A8891 /* WCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCommentViewController.h; sourceTree = "<group>"; };
+		32995F861C23E59D008A8891 /* WCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCommentViewController.m; sourceTree = "<group>"; };
 		32B16E071C117BD400865247 /* WoYaoFa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoYaoFa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B16E0B1C117BD400865247 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32B16E0D1C117BD400865247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -263,6 +353,22 @@
 		32BB861A1C181800008016A4 /* WAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAddressBook.m; sourceTree = "<group>"; };
 		32BB861E1C181996008016A4 /* LinApiManager+AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LinApiManager+AddressBook.h"; sourceTree = "<group>"; };
 		32BB861F1C181996008016A4 /* LinApiManager+AddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LinApiManager+AddressBook.m"; sourceTree = "<group>"; };
+		32BFB60B1C28FF3600B246F0 /* UIImage+LImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LImage.h"; sourceTree = "<group>"; };
+		32BFB60C1C28FF3600B246F0 /* UIImage+LImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LImage.m"; sourceTree = "<group>"; };
+		32BFB60F1C29052200B246F0 /* LinMutipartRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinMutipartRequest.h; sourceTree = "<group>"; };
+		32BFB6101C29052200B246F0 /* LinMutipartRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinMutipartRequest.m; sourceTree = "<group>"; };
+		32C4EA321C2A413D005B88F6 /* WSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSecurityViewController.h; sourceTree = "<group>"; };
+		32C4EA331C2A413D005B88F6 /* WSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSecurityViewController.m; sourceTree = "<group>"; };
+		32C4EA351C2A427E005B88F6 /* my_set_up_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_set_up_password@2x.png"; sourceTree = "<group>"; };
+		32C4EA371C2A4467005B88F6 /* my_set_up_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_set_up_phone@2x.png"; sourceTree = "<group>"; };
+		32C4EA391C2A4B2E005B88F6 /* WChangePhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WChangePhoneViewController.h; sourceTree = "<group>"; };
+		32C4EA3A1C2A4B2E005B88F6 /* WChangePhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WChangePhoneViewController.m; sourceTree = "<group>"; };
+		32C4EA3C1C2A64A2005B88F6 /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleApp.html; sourceTree = "<group>"; };
+		32C4EAF01C2A776B005B88F6 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		32C4EAF31C2A7EDE005B88F6 /* WCompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCompanyViewController.h; sourceTree = "<group>"; };
+		32C4EAF41C2A7EDE005B88F6 /* WCompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCompanyViewController.m; sourceTree = "<group>"; };
+		32C4EAF61C2A7F36005B88F6 /* UIWebView+LWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+LWebView.h"; sourceTree = "<group>"; };
+		32C4EAF71C2A7F36005B88F6 /* UIWebView+LWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+LWebView.m"; sourceTree = "<group>"; };
 		32C6B7AB1C13320F00A70EE1 /* my_opinion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_opinion@2x.png"; sourceTree = "<group>"; };
 		32C6B7AC1C13320F00A70EE1 /* my_order_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_order_history@2x.png"; sourceTree = "<group>"; };
 		32C6B7AD1C13320F00A70EE1 /* my_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_phone@2x.png"; sourceTree = "<group>"; };
@@ -326,6 +432,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321A3BD11C22416A009ADD06 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				321A3BD21C224186009ADD06 /* WPlaceOrderView.h */,
+				321A3BD31C224186009ADD06 /* WPlaceOrderView.m */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
+		321A3BD91C225E5B009ADD06 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				321A3BDA1C225E68009ADD06 /* UITextView+placeholder.h */,
+				321A3BDB1C225E68009ADD06 /* UITextView+placeholder.m */,
+			);
+			name = TextView;
+			sourceTree = "<group>";
+		};
 		322ACB3C1C1E88F600141B19 /* AlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,9 +479,27 @@
 			name = Date;
 			sourceTree = "<group>";
 		};
+		322C4B341C2BB93200FC4320 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				322C4B351C2BB94800FC4320 /* WLineViewController.h */,
+				322C4B361C2BB94800FC4320 /* WLineViewController.m */,
+			);
+			name = Line;
+			sourceTree = "<group>";
+		};
+		323420DF1C34CA5200A50E4A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				323420DD1C34CA4600A50E4A /* an@2x.png */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		32430BF91C1A6D45007AB978 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				325AD1821C31234400A8F342 /* Comment */,
 				32430BFA1C1A6D5D007AB978 /* WOrderView.h */,
 				32430BFB1C1A6D5D007AB978 /* WOrderView.m */,
 			);
@@ -367,11 +509,31 @@
 		32430C001C1A700F007AB978 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				323420E01C34D03800A50E4A /* choose_icon@2x.png */,
+				321A3BDD1C225FF4009ADD06 /* logistics_add_images@2x.png */,
 				32FB38C31C1A7E6900590AE8 /* arrive_icon@2x.png */,
 				32FB38BF1C1A770E00590AE8 /* order_details_arrow@2x.png */,
 				32430C011C1A7019007AB978 /* order_logistics@2x.png */,
 			);
 			name = Order;
+			sourceTree = "<group>";
+		};
+		325AD1711C30D05200A8F342 /* AddandEdit */ = {
+			isa = PBXGroup;
+			children = (
+				325AD1721C30D06300A8F342 /* WAddressBookAddViewController.h */,
+				325AD1731C30D06300A8F342 /* WAddressBookAddViewController.m */,
+			);
+			name = AddandEdit;
+			sourceTree = "<group>";
+		};
+		325AD1821C31234400A8F342 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				325AD1831C31235700A8F342 /* WCommentView.h */,
+				325AD1841C31235700A8F342 /* WCommentView.m */,
+			);
+			name = Comment;
 			sourceTree = "<group>";
 		};
 		3273B7E51C12711100597049 /* Navigation */ = {
@@ -411,6 +573,9 @@
 		3273B7EE1C12718700597049 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				328E26AF1C27C73D0073905F /* Payment */,
+				32897DB31C264EB800BDDE08 /* CancelOrder */,
+				32995F841C23E58D008A8891 /* Comment */,
 				3273B7EF1C12719300597049 /* RootView */,
 			);
 			name = Order;
@@ -428,6 +593,9 @@
 		3273B7F61C1271DE00597049 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3283DD911C32723E006B75B2 /* Collection */,
+				32C4EA311C2A4123005B88F6 /* Security */,
+				32897DAF1C264A4C00BDDE08 /* Feedback */,
 				329315121C19208D009AF33D /* LoginAndRegister */,
 				328707C41C15694F0098296E /* Setting */,
 				328707A51C15244E0098296E /* AddressBook */,
@@ -448,6 +616,7 @@
 		3273B7FE1C127F5500597049 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				323420DF1C34CA5200A50E4A /* Home */,
 				32430C001C1A700F007AB978 /* Order */,
 				329315161C192588009AF33D /* bg.png */,
 				329315221C193E35009AF33D /* LoginAndRegister */,
@@ -482,9 +651,54 @@
 			name = Tabbar;
 			sourceTree = "<group>";
 		};
+		3283DD911C32723E006B75B2 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				3283DD921C32726E006B75B2 /* WCollectionsViewController.h */,
+				3283DD931C32726E006B75B2 /* WCollectionsViewController.m */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		3283DD951C3276A2006B75B2 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				3283DD961C3276C3006B75B2 /* CollectionView.h */,
+				3283DD971C3276C3006B75B2 /* CollectionView.m */,
+				3283DD991C327CE8006B75B2 /* CollectionLineView.h */,
+				3283DD9A1C327CE8006B75B2 /* CollectionLineView.m */,
+				328684DB1C337F2A00C7262F /* CollectionDelegate.h */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		328684D41C3371DA00C7262F /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				328684D51C3371F400C7262F /* LinApiManager+Collection.h */,
+				328684D61C3371F400C7262F /* LinApiManager+Collection.m */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		328684DC1C339FE300C7262F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				328684DD1C33A06E00C7262F /* LLocationService.h */,
+				328684DE1C33A06E00C7262F /* LLocationService.m */,
+				328684E01C33A13500C7262F /* LLMapBaseService.h */,
+				328684E11C33A13500C7262F /* LLMapBaseService.m */,
+				328684E31C33A87300C7262F /* AMapKey.h */,
+				328684E41C33B8D000C7262F /* LLGeoCodeService.h */,
+				328684E51C33B8D000C7262F /* LLGeoCodeService.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
 		328707A51C15244E0098296E /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				325AD1711C30D05200A8F342 /* AddandEdit */,
 				328707A61C1524800098296E /* WAddressBookViewController.h */,
 				328707A71C1524800098296E /* WAddressBookViewController.m */,
 			);
@@ -494,6 +708,7 @@
 		328707A91C1525090098296E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3283DD951C3276A2006B75B2 /* Collection */,
 				328707C81C156B780098296E /* Setting */,
 				328707AB1C1525230098296E /* AddressBook */,
 				328707AA1C1525190098296E /* RootView */,
@@ -532,6 +747,9 @@
 		328707B01C1526BE0098296E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				32C4EAF91C2A7F3B005B88F6 /* WebView */,
+				32BFB60E1C29001400B246F0 /* Image */,
+				321A3BD91C225E5B009ADD06 /* TextView */,
 				322ACB3C1C1E88F600141B19 /* AlertView */,
 				32BB85FE1C17FF46008016A4 /* HUD */,
 				328707D61C1584CA0098296E /* View */,
@@ -597,6 +815,51 @@
 				328707D81C1584F20098296E /* UIViewExt.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		32897DAF1C264A4C00BDDE08 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				32897DB01C264A6B00BDDE08 /* WFeedbackViewController.h */,
+				32897DB11C264A6B00BDDE08 /* WFeedbackViewController.m */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
+		32897DB31C264EB800BDDE08 /* CancelOrder */ = {
+			isa = PBXGroup;
+			children = (
+				32897DB41C264ED100BDDE08 /* WCancelOrderViewController.h */,
+				32897DB51C264ED100BDDE08 /* WCancelOrderViewController.m */,
+			);
+			name = CancelOrder;
+			sourceTree = "<group>";
+		};
+		328E26A41C27951E0073905F /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				328E26A51C27952B0073905F /* LinApiManager+Feedback.h */,
+				328E26A61C27952B0073905F /* LinApiManager+Feedback.m */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
+		328E26A81C27A83E0073905F /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				328E26A91C27A84E0073905F /* LinApiManager+Comment.h */,
+				328E26AA1C27A84E0073905F /* LinApiManager+Comment.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		328E26AF1C27C73D0073905F /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				328E26B01C27C7540073905F /* WPaymentViewController.h */,
+				328E26B11C27C7540073905F /* WPaymentViewController.m */,
+			);
+			name = Payment;
 			sourceTree = "<group>";
 		};
 		329315121C19208D009AF33D /* LoginAndRegister */ = {
@@ -670,6 +933,8 @@
 		32951DED1C1FAD0F004260AE /* LineAndCompany */ = {
 			isa = PBXGroup;
 			children = (
+				322C4B341C2BB93200FC4320 /* Line */,
+				32C4EAF21C2A7EC8005B88F6 /* Company */,
 				32951DEA1C1FAD06004260AE /* WLineAndCompanyViewController.h */,
 				32951DEB1C1FAD06004260AE /* WLineAndCompanyViewController.m */,
 			);
@@ -679,6 +944,7 @@
 		32951DEE1C1FADD7004260AE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				321A3BD11C22416A009ADD06 /* Order */,
 				32951DEF1C1FADDC004260AE /* LineAndCompany */,
 			);
 			name = Home;
@@ -724,15 +990,37 @@
 		32951E031C200B98004260AE /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				32995F801C23A6C8008A8891 /* AddressBook */,
 				32951E041C200BDA004260AE /* WPlaceOrderViewController.h */,
 				32951E051C200BDA004260AE /* WPlaceOrderViewController.m */,
 			);
 			name = Order;
 			sourceTree = "<group>";
 		};
+		32995F801C23A6C8008A8891 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				32995F811C23A6FC008A8891 /* WSelectAddressViewController.h */,
+				32995F821C23A6FC008A8891 /* WSelectAddressViewController.m */,
+			);
+			name = AddressBook;
+			sourceTree = "<group>";
+		};
+		32995F841C23E58D008A8891 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				32995F851C23E59D008A8891 /* WCommentViewController.h */,
+				32995F861C23E59D008A8891 /* WCommentViewController.m */,
+				325AD17F1C311BAC00A8F342 /* WCommentListViewController.h */,
+				325AD1801C311BAC00A8F342 /* WCommentListViewController.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
 		32B16DFE1C117BD400865247 = {
 			isa = PBXGroup;
 			children = (
+				32C4EAF01C2A776B005B88F6 /* www */,
 				32B16E091C117BD400865247 /* WoYaoFa */,
 				32B16E261C117BD400865247 /* WoYaoFaTests */,
 				32B16E311C117BD400865247 /* WoYaoFaUITests */,
@@ -755,6 +1043,7 @@
 		32B16E091C117BD400865247 /* WoYaoFa */ = {
 			isa = PBXGroup;
 			children = (
+				32C4EA3C1C2A64A2005B88F6 /* ExampleApp.html */,
 				328707AF1C1526B60098296E /* Extends */,
 				32F332651C117E82003C7799 /* Vendors */,
 				32F332641C117E5B003C7799 /* Models */,
@@ -836,6 +1125,8 @@
 		32BB861C1C18196C008016A4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				328684D41C3371DA00C7262F /* Collection */,
+				328E26A41C27951E0073905F /* Feedback */,
 				322ACB431C1E9CEB00141B19 /* Setting */,
 				3293154B1C19655F009AF33D /* LoginAndRegister */,
 				32BB861D1C181976008016A4 /* AddressBook */,
@@ -852,9 +1143,51 @@
 			name = AddressBook;
 			sourceTree = "<group>";
 		};
+		32BFB60E1C29001400B246F0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				32BFB60B1C28FF3600B246F0 /* UIImage+LImage.h */,
+				32BFB60C1C28FF3600B246F0 /* UIImage+LImage.m */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		32C4EA311C2A4123005B88F6 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				32C4EA321C2A413D005B88F6 /* WSecurityViewController.h */,
+				32C4EA331C2A413D005B88F6 /* WSecurityViewController.m */,
+				32C4EA391C2A4B2E005B88F6 /* WChangePhoneViewController.h */,
+				32C4EA3A1C2A4B2E005B88F6 /* WChangePhoneViewController.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		32C4EAF21C2A7EC8005B88F6 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				32C4EAF31C2A7EDE005B88F6 /* WCompanyViewController.h */,
+				32C4EAF41C2A7EDE005B88F6 /* WCompanyViewController.m */,
+				322C4B311C2B996D00FC4320 /* WCompanyDetailViewController.h */,
+				322C4B321C2B996D00FC4320 /* WCompanyDetailViewController.m */,
+			);
+			name = Company;
+			sourceTree = "<group>";
+		};
+		32C4EAF91C2A7F3B005B88F6 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				32C4EAF61C2A7F36005B88F6 /* UIWebView+LWebView.h */,
+				32C4EAF71C2A7F36005B88F6 /* UIWebView+LWebView.m */,
+			);
+			name = WebView;
+			sourceTree = "<group>";
+		};
 		32C6B7A91C13318500A70EE1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				32C4EA371C2A4467005B88F6 /* my_set_up_phone@2x.png */,
+				32C4EA351C2A427E005B88F6 /* my_set_up_password@2x.png */,
 				328707D41C1582F30098296E /* my_set_up@2x.png */,
 				328707C21C1568650098296E /* my_address_book_default@2x.png */,
 				32C6B7B61C13337800A70EE1 /* my_address_book@2x.png */,
@@ -914,6 +1247,12 @@
 				32FB38CA1C1AB93600590AE8 /* WLine.m */,
 				322ACB391C1E575000141B19 /* WCompany.h */,
 				322ACB3A1C1E575000141B19 /* WCompany.m */,
+				328E26AC1C27A8770073905F /* WComment.h */,
+				328E26AD1C27A8770073905F /* WComment.m */,
+				328684D81C33720A00C7262F /* WCollection.h */,
+				328684D91C33720A00C7262F /* WCollection.m */,
+				323420E21C34DFFF00A50E4A /* WDefaultAddress.h */,
+				323420E31C34DFFF00A50E4A /* WDefaultAddress.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -921,6 +1260,7 @@
 		32F332651C117E82003C7799 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				328684DC1C339FE300C7262F /* Location */,
 				3293153A1C19620C009AF33D /* SMS_SDK */,
 				32F332661C118397003C7799 /* Network */,
 			);
@@ -938,6 +1278,8 @@
 				32FA531D1C11C6AA003741E7 /* LinNetworkPrivate.h */,
 				32FA531E1C11C6AA003741E7 /* LinNetworkPrivate.m */,
 				32FA53201C11D054003741E7 /* LinNetwork.h */,
+				32BFB60F1C29052200B246F0 /* LinMutipartRequest.h */,
+				32BFB6101C29052200B246F0 /* LinMutipartRequest.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -954,6 +1296,7 @@
 		32FB38C51C1A99B400590AE8 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				328E26A81C27A83E0073905F /* Comment */,
 				32FB38C61C1A9AA100590AE8 /* LinApiManager+Order.h */,
 				32FB38C71C1A9AA100590AE8 /* LinApiManager+Order.m */,
 			);
@@ -1104,13 +1447,18 @@
 				32C6B7B11C13320F00A70EE1 /* my_phone@2x.png in Resources */,
 				3273B8101C127F7800597049 /* order_not_choose@2x.png in Resources */,
 				3273B8231C12800500597049 /* order_choose@3x.png in Resources */,
+				32C4EA3D1C2A64A2005B88F6 /* ExampleApp.html in Resources */,
 				32B16E181C117BD400865247 /* Main.storyboard in Resources */,
+				323420E11C34D03800A50E4A /* choose_icon@2x.png in Resources */,
 				3273B80B1C127F7800597049 /* house_not_choose@3x.png in Resources */,
+				32C4EAF11C2A776B005B88F6 /* www in Resources */,
 				329315401C19620C009AF33D /* SMS_SDKLocalizable.strings in Resources */,
 				328707C31C1568650098296E /* my_address_book_default@2x.png in Resources */,
+				321A3BDE1C225FF4009ADD06 /* logistics_add_images@2x.png in Resources */,
 				3273B81E1C12800500597049 /* my_choose.png in Resources */,
 				3273B8111C127F7800597049 /* order_not_choose@3x.png in Resources */,
 				32FB38C41C1A7E6900590AE8 /* arrive_icon@2x.png in Resources */,
+				323420DE1C34CA4600A50E4A /* an@2x.png in Resources */,
 				3273B81D1C12800500597049 /* house_choose@3x.png in Resources */,
 				3273B80C1C127F7800597049 /* my_not_choose.png in Resources */,
 				32430C021C1A7019007AB978 /* order_logistics@2x.png in Resources */,
@@ -1120,7 +1468,9 @@
 				3273B80E1C127F7800597049 /* my_not_choose@3x.png in Resources */,
 				32951DFE1C1FF4A2004260AE /* address.plist in Resources */,
 				3273B8211C12800500597049 /* order_choose.png in Resources */,
+				32C4EA381C2A4467005B88F6 /* my_set_up_phone@2x.png in Resources */,
 				329315261C193F58009AF33D /* registered_password@2x.png in Resources */,
+				32C4EA361C2A427E005B88F6 /* my_set_up_password@2x.png in Resources */,
 				3273B8091C127F7800597049 /* house_not_choose.png in Resources */,
 				3273B80A1C127F7800597049 /* house_not_choose@2x.png in Resources */,
 				3273B8221C12800500597049 /* order_choose@2x.png in Resources */,
@@ -1203,38 +1553,58 @@
 			files = (
 				32BB86091C180E9D008016A4 /* WAccount.m in Sources */,
 				32FB38C81C1A9AA100590AE8 /* LinApiManager+Order.m in Sources */,
+				32C4EA3B1C2A4B2E005B88F6 /* WChangePhoneViewController.m in Sources */,
 				32951E061C200BDA004260AE /* WPlaceOrderViewController.m in Sources */,
 				32BB86041C18029D008016A4 /* MBProgressHUD+LHUD.m in Sources */,
+				328E26AB1C27A84E0073905F /* LinApiManager+Comment.m in Sources */,
 				322ACB421C1E8A0700141B19 /* RIButtonItem.m in Sources */,
 				32FB38CB1C1AB93600590AE8 /* WLine.m in Sources */,
+				328E26AE1C27A8770073905F /* WComment.m in Sources */,
 				328707AE1C1525510098296E /* WAddressBookView.m in Sources */,
+				321A3BDC1C225E68009ADD06 /* UITextView+placeholder.m in Sources */,
+				321A3BD41C224186009ADD06 /* WPlaceOrderView.m in Sources */,
 				32FA531F1C11C6AA003741E7 /* LinNetworkPrivate.m in Sources */,
 				322ACB4E1C1EAA1400141B19 /* WEditNameViewController.m in Sources */,
+				328684DA1C33720A00C7262F /* WCollection.m in Sources */,
 				32F3326C1C118525003C7799 /* LinBaseRequest.m in Sources */,
 				32BB86201C181996008016A4 /* LinApiManager+AddressBook.m in Sources */,
 				3293151A1C1927B5009AF33D /* WLoginNavigation.m in Sources */,
 				322ACB3F1C1E890100141B19 /* UIAlertView+Blocks.m in Sources */,
 				3273B7F51C1271D900597049 /* WProfileViewController.m in Sources */,
 				3273B7ED1C12718000597049 /* WHomeViewController.m in Sources */,
+				32C4EAF51C2A7EDE005B88F6 /* WCompanyViewController.m in Sources */,
 				32F332691C11847D003C7799 /* LinNetworkAgent.m in Sources */,
+				32BFB60D1C28FF3600B246F0 /* UIImage+LImage.m in Sources */,
 				32F332611C117E2F003C7799 /* ViewController.m in Sources */,
+				328E26B21C27C7540073905F /* WPaymentViewController.m in Sources */,
 				32430BF81C1A6C42007AB978 /* WOrdersViewController.m in Sources */,
+				3283DD941C32726E006B75B2 /* WCollectionsViewController.m in Sources */,
+				32995F871C23E59D008A8891 /* WCommentViewController.m in Sources */,
+				323420E41C34DFFF00A50E4A /* WDefaultAddress.m in Sources */,
 				328707D91C1584F20098296E /* UIViewExt.m in Sources */,
 				32BB860D1C181093008016A4 /* MJExtnsionConfig.m in Sources */,
 				32430BFC1C1A6D5D007AB978 /* WOrderView.m in Sources */,
 				329315541C197A4B009AF33D /* KeychainItemWrapper.m in Sources */,
 				3273B7E81C12714300597049 /* WHomeNavigation.m in Sources */,
 				3293154E1C196573009AF33D /* LinApiManager+LoginAndRegister.m in Sources */,
+				328E26A71C27952B0073905F /* LinApiManager+Feedback.m in Sources */,
 				32BB86181C18164D008016A4 /* WUser.m in Sources */,
 				329315291C19447E009AF33D /* WRegisterViewController.m in Sources */,
+				32C4EA341C2A413D005B88F6 /* WSecurityViewController.m in Sources */,
 				32FA53251C11D0C6003741E7 /* LinApiManager.m in Sources */,
+				322C4B371C2BB94800FC4320 /* WLineViewController.m in Sources */,
 				3273B7FA1C12721200597049 /* WOrderNavigation.m in Sources */,
+				32897DB61C264ED100BDDE08 /* WCancelOrderViewController.m in Sources */,
 				322ACB4A1C1EA5B600141B19 /* UIDateView.m in Sources */,
+				322C4B331C2B996D00FC4320 /* WCompanyDetailViewController.m in Sources */,
+				328684D71C3371F400C7262F /* LinApiManager+Collection.m in Sources */,
 				328707B31C1526E00098296E /* UILabel+LLabel.m in Sources */,
 				3273B7FD1C12722E00597049 /* WProfileNavigation.m in Sources */,
 				329315391C19547C009AF33D /* LCountDownButton.m in Sources */,
+				325AD1851C31235700A8F342 /* WCommentView.m in Sources */,
 				322ACB3B1C1E575000141B19 /* WCompany.m in Sources */,
 				32951DEC1C1FAD06004260AE /* WLineAndCompanyViewController.m in Sources */,
+				325AD1741C30D06300A8F342 /* WAddressBookAddViewController.m in Sources */,
 				328707CB1C156B900098296E /* WSettingView.m in Sources */,
 				32951DF51C1FAE04004260AE /* WCompanyView.m in Sources */,
 				3293151D1C1930F6009AF33D /* WLoginViewController.m in Sources */,
@@ -1242,12 +1612,22 @@
 				32430BFF1C1A6D79007AB978 /* WOrder.m in Sources */,
 				32BB86151C181367008016A4 /* LPageResult.m in Sources */,
 				32951E021C1FF507004260AE /* LAddressPicker.m in Sources */,
+				328684E61C33B8D000C7262F /* LLGeoCodeService.m in Sources */,
 				328707B71C1529F00098296E /* LLabel.m in Sources */,
 				322ACB461C1E9D0200141B19 /* LinApiManager+Setting.m in Sources */,
+				328684E21C33A13500C7262F /* LLMapBaseService.m in Sources */,
 				32B16E0F1C117BD400865247 /* AppDelegate.m in Sources */,
+				32897DB21C264A6B00BDDE08 /* WFeedbackViewController.m in Sources */,
 				328707C71C15696E0098296E /* WSettingViewController.m in Sources */,
+				32995F831C23A6FC008A8891 /* WSelectAddressViewController.m in Sources */,
+				3283DD9B1C327CE8006B75B2 /* CollectionLineView.m in Sources */,
+				32C4EAF81C2A7F36005B88F6 /* UIWebView+LWebView.m in Sources */,
 				32951DF21C1FADF6004260AE /* WLineView.m in Sources */,
+				32BFB6111C29052200B246F0 /* LinMutipartRequest.m in Sources */,
 				32BB86111C1812AC008016A4 /* LDataResult.m in Sources */,
+				328684DF1C33A06E00C7262F /* LLocationService.m in Sources */,
+				3283DD981C3276C3006B75B2 /* CollectionView.m in Sources */,
+				325AD1811C311BAC00A8F342 /* WCommentListViewController.m in Sources */,
 				32B16E0C1C117BD400865247 /* main.m in Sources */,
 				32BB861B1C181800008016A4 /* WAddressBook.m in Sources */,
 				32C7AE071C13F12400B547D4 /* WProfileHeaderView.m in Sources */,

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '30816105FE718A1E3A38885F'
+               BlueprintIdentifier = '66D461C244DB5A2D1B60E3FC'
                BlueprintName = 'LBBlurredImage'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libLBBlurredImage.a'>

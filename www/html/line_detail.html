@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="line_detail">
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no, width=device-width">
+    <title>线路详情</title>
+    <link rel="stylesheet" href="../css/jquery.slideBox.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../css/line_detail.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body ng-controller="lineDetailCtrl">
+    <div id="carousel" class="slideBox">
+        <ul class="items" id="carousel_list">
+            <li>
+                <img src="{{lineBean.image}}" alt="" />
+            </li>
+            <li>
+                <img src="{{lineBean.image}}" alt="" />
+            </li>
+            <li>
+                <img src="{{lineBean.image}}" alt="" />
+            </li>
+        </ul>
+    </div>
+    <div id="from_to" class="items">
+        <span id="from" class="">{{lineBean.beginCity}}{{lineBean.beginDistrict}}</span>
+        <img src="../img/arrow_gray_right.png" class="arrive" />
+        <span id="to" class="">{{lineBean.endCity}}{{lineBean.endDistrict}}</span>
+    </div>
+    <div class="items price_info divider">
+        <span class="price margin_right">￥：{{lineBean.minPrice}}-{{lineBean.maxPrice}}元/kg</span>
+        <span class="subtitle">时效：</span>
+        <span class="margin_right">{{lineBean.minDay}}-{{lineBean.maxDay}}天</span>
+        <span class="subtitle">成交量：</span>
+        <span>{{lineBean.volume}}笔</span>
+    </div>
+    <div id="address" class="items">
+        <img id="logo" src="../img/landmark_line_detail.png" alt="" class="name_items" />
+        <div class="">
+            {{lineBean.company.province}}{{lineBean.company.city}}{{lineBean.company.district}}{{lineBean.company.address}}
+        </div>
+        <img id="phone" src="../img/phone.png" alt="" class="name_items" />
+    </div>
+    <div id="company" class="items">
+        <img id="logo" src="{{lineBean.company.logo}}" alt="" class="name_items logo" />
+        <div id="company_content" class="name_items">
+            <div id="name" class="">
+                <span>{{lineBean.company.name}}</span>
+            </div>
+            <div class="">
+                <img src="../img/CAIC.png" alt="" class="certificate" />
+                <img src="../img/QC.png" alt="" class="certificate" />
+            </div>
+        </div>
+        <img src="../img/arrow_gray_right.png" alt="" class="arrow center" />
+    </div>
+
+    <div id="evaluation" class="items">
+        <span class="">评价({{lineBean.commentNum}})</span>
+        <img id="logo" src="../img/arrow_gray_right.png" alt="" class="arrow" />
+        <span class="score">{{lineBean.commentTotalScore|number:1}}分&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="items divider_block">
+        <span class="">其他路线</span>
+    </div>
+    <ul id="lines" class="items">
+        <li class="line" ng-repeat="line in otherLines">
+            <div class="line_info">
+                <span class="">{{line.beginCity}}{{line.beginDistrict}}</span>
+                <img src="../img/arrow_gray_right.png" class="arrive" />
+                <span class="">{{line.endCity}}{{line.endDistrict}}</span>
+            </div>
+            <div class="price_info">
+                <span class="price margin_right">￥：{{line.minPrice}}-{{line.maxPrice}}元/kg</span>
+                <span class="subtitle">时效：</span>
+                <span class="margin_right">{{line.minDay}}-{{line.maxDay}}天</span>
+                <span class="subtitle">成交量：</span>
+                <span>{{line.volume}}笔</span>
+            </div>
+        </li>
+    </ul>
+    <div class="option">
+        <div id="option_phone" class="contact">
+            <img src="../img/phone_white.png" alt="" />
+            <div>
+                电话联系
+            </div>
+        </div>
+        <div id="collect" class="collect">
+            <img src="../img/collection_white.png" alt="" />
+            <div>
+                收藏
+            </div>
+        </div>
+        <div id="order" class="order">
+            立即下单
+        </div>
+    </div>
+    <!-- <center class="mHead">
+        <img  id="mBack" src="../img/arrow_white_left.png" alt="" />w
+        <span id="mTitle">线路详情</span>
+        <span id="mRight">投诉</span>
+    </center> -->
+    <script src="../js/base.js" charset="utf-8"></script>
+    <script src="../js/jquery.js" charset="utf-8"></script>
+    <script src="../js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="../js/angular.js" charset="utf-8"></script>
+    <script src="../js/jquery.slideBox.js" charset="utf-8"></script>
+    <script src="../js/webViewJavascriptBridge.js" charset="utf-8"></script>
+    <script src="../js/line_detail.js" charset="utf-8"></script>
+</body>
+
+</html>

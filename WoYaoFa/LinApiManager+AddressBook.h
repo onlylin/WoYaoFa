@@ -13,4 +13,10 @@
 
 - (RACSignal*)getAddressBooks:(NSInteger)accountId addressType:(AddressBookType)type pageIndex:(NSInteger)pageIndex pageSize:(NSInteger)pageSize;
 
+- (RACSignal*)addAddressBook:(WAddressBook*)addressBook;
+
+- (RACSignal*)modifyAddressBook:(WAddressBook*)addressBook;
+
+- (RACSignal*)setDefaultAddressBook:(NSInteger)addressBookId user:(NSInteger)userId;
+
 @end

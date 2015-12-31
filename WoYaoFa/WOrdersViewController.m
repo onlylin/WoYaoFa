@@ -8,9 +8,11 @@
 
 #import "WOrdersViewController.h"
 #import "LinApiManager+Order.h"
+#import "WCommentViewController.h"
+#import "WPaymentViewController.h"
 #import "WOrderView.h"
 
-@interface WOrdersViewController (){
+@interface WOrdersViewController ()<WOrderViewDelegate>{
     NSArray *keys;
     NSDictionary *dictionary;
 }
@@ -28,6 +30,7 @@
     {
         self.navigationController.navigationBar.translucent = NO;
     }
+    self.navigationItem.title = @"订单列表";
     keys = @[@"待受理",@"待发货",@"待收货",@"待评价",@"已完成"];
     dictionary = @{
                    @"已完成" : @(-1),
@@ -43,7 +46,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.segment.mas_bottom).offset(0);
         make.bottom.left.right.mas_offset(0);
@@ -54,6 +56,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    [self setHidesBottomBarWhenPushed:YES];
     __weak NSDictionary *weakDict = dictionary;
     __weak NSArray *weakKeys = keys;
     @weakify(self)
@@ -63,6 +66,10 @@
         [self.viewModels removeAllObjects];
         [self getOrders:(OrderStatus)[status integerValue]];
     }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,6 +110,79 @@
 }
 
 
+- (void)clickLeftButton:(OrderStatus)orderStatus viewModel:(WOrderView *)viewModel{
+    switch (orderStatus) {
+        case OrderStatusReceived:
+        {
+            WPaymentViewController *viewController = [[WPaymentViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+- (void)clickRight1Button:(OrderStatus)orderStatus viewModel:(WOrderView *)viewModel{
+    switch (orderStatus) {
+        case OrderStatusAccepted:
+        case OrderStatusShipped:
+        {
+            //取消订单和申请取消订单事件
+            RACSignal *signal = [[LinApiManager shareInstance] cancelOrder:viewModel.model.ID orderStatus:orderStatus];
+            [[signal filter:^BOOL(LDataResult *dataResult) {
+                [MBProgressHUD showTextOnly:dataResult.msg];
+                return dataResult.code == ResponseStatusOk;
+            }] subscribeNext:^(id x) {
+                [self.viewModels removeObject:viewModel];
+                [self.tableView reloadData];
+            }];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+- (void)clickRight2Button:(OrderStatus)orderStatus viewModel:(WOrderView *)viewModel{
+    switch (orderStatus) {
+        case OrderStatusShipped:
+        case OrderStatusAccepted:
+        {
+            UIAlertView *alertView = [UIAlertView bk_showAlertViewWithTitle:nil message:@"提醒成功" cancelButtonTitle:@"确定" otherButtonTitles:nil handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                
+            }];
+            [alertView show];
+            break;
+        }
+        case OrderStatusReceived:
+        case OrderStatusConfirmed:
+        {
+            RACSignal *signal = [[LinApiManager shareInstance] confirmOrder:viewModel.model.ID];
+            [[signal filter:^BOOL(LDataResult *dataResult) {
+                [MBProgressHUD showTextOnly:dataResult.msg];
+                return dataResult.code == ResponseStatusOk;
+            }] subscribeNext:^(id x) {
+                [self.viewModels removeAllObjects];
+                [self getOrders:2];
+            }];
+            break;
+        }
+        case OrderStatusEvaluated:
+        {
+            WCommentViewController *viewContrller = [[WCommentViewController alloc] init];
+            viewContrller.orderId = viewModel.model.ID;
+            [self.navigationController pushViewController:viewContrller animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
 #pragma mark - Private Method
 - (void)addRACSignal{
     [RACObserve(self.segment, selectedSegmentIndex) subscribeNext:^(NSNumber *index) {
@@ -121,10 +201,11 @@
     }] map:^id(LDataResult *dataResult) {
         return [LPageResult mj_objectWithKeyValues:dataResult.datas];
     }] subscribeNext:^(LPageResult *pageResult) {
-        NSLog(@"%@",pageResult.results);
         NSArray *array = [WOrder mj_objectArrayWithKeyValuesArray:pageResult.results];
         for (WOrder *order in array) {
-            WOrderView *orderView = [[WOrderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 260) viewModel:order];
+            WOrderView *orderView = [[WOrderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 260)];
+            orderView.model = order;
+            orderView.delegate = self;
             [self.viewModels addObject:orderView];
         }
     } completed:^{

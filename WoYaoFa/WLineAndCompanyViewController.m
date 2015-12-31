@@ -8,6 +8,8 @@
 
 #import "WLineAndCompanyViewController.h"
 #import "LinApiManager+LineAndCompany.h"
+#import "WCompanyViewController.h"
+#import "WLineViewController.h"
 #import "WCompanyView.h"
 #import "WLineView.h"
 #import "WCompany.h"
@@ -18,6 +20,8 @@
 
 @interface WLineAndCompanyViewController (){
     UIButton *selectButton;
+    NSString *begin;
+    NSString *end;
 }
 
 @end
@@ -33,11 +37,14 @@
     {
         self.navigationController.navigationBar.translucent = NO;
     }
+    self.navigationItem.title = @"找物流";
     
     [self.view addSubview:self.navView];
     [self.view addSubview:self.tableView];
     [self.navView addSubview:self.beginButton];
+    [self.navView addSubview:self.beginImageView];
     [self.navView addSubview:self.endButton];
+    [self.navView addSubview:self.endImageView];
     [self.navView addSubview:self.distanceButton];
     [self.navView addSubview:self.imageView];
     [self.imageView addSubview:self.arrowView];
@@ -57,9 +64,17 @@
     [self.endButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(self.navView);
     }];
+    [self.endImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.endButton.mas_right).offset(2);
+        make.centerY.mas_equalTo(self.navView);
+    }];
     
     [self.beginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(20);
+        make.centerY.mas_equalTo(self.navView);
+    }];
+    [self.beginImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.beginButton.mas_right).offset(2);
         make.centerY.mas_equalTo(self.navView);
     }];
     
@@ -70,7 +85,7 @@
     
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(self.navView.mas_height);
-        make.left.mas_equalTo(self.beginButton.mas_right);
+        make.left.mas_equalTo(self.beginImageView.mas_right);
         make.right.mas_equalTo(self.endButton.mas_left);
     }];
     
@@ -94,7 +109,13 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    [self getCompanies];
+    [self setHidesBottomBarWhenPushed:YES];
+    if (self.defaultAddress != nil) {
+        self.beginButton.titleLabel.text = self.defaultAddress.district;
+        [self.beginButton setTitle:self.defaultAddress.district forState:UIControlStateNormal];
+        begin = [NSString stringWithFormat:@"%@,%@,%@",self.defaultAddress.province,self.defaultAddress.city,self.defaultAddress.district];
+    }
+//    [self getCompanies];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,14 +146,59 @@
     return 130;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([self.endButton.titleLabel.text isEqualToString:END_ADDRESS]) {
+        WCompanyViewController *viewController = [[WCompanyViewController alloc] init];
+        WCompanyView *companyView = [self.viewModels objectAtIndex:indexPath.row];
+        viewController.companyId = [[companyView model] ID];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }else{
+        WLineViewController *viewController = [[WLineViewController alloc] init];
+        WLineView *lineView = [self.viewModels objectAtIndex:indexPath.row];
+        viewController.companyId = [[[lineView model] company] ID];
+        viewController.lineId = [[lineView model] ID];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    
+}
+
 #pragma mark - LAddressPicker Delegate
 - (void)selectedProvince:(NSString *)province city:(NSString *)city district:(NSString *)district{
-    selectButton.titleLabel.text = district;
-    [selectButton setTitle:district forState:UIControlStateNormal];
+    NSMutableString *provinceStr = [NSMutableString stringWithString:province];
+    NSMutableString *cityStr = [NSMutableString stringWithString:city];
+    NSRange range = [provinceStr rangeOfString:@"省"];
+    if (range.length > 0) {
+         [provinceStr deleteCharactersInRange:range];
+    }else{
+        range = [provinceStr rangeOfString:@"市"];
+        if (range.length > 0) {
+           [provinceStr deleteCharactersInRange:range];
+        }
+    }
+    [cityStr deleteCharactersInRange:[cityStr rangeOfString:@"市"]];
+    if (selectButton.tag == BEGIN_BUTTON) {
+        begin = [NSString stringWithFormat:@"%@,%@,%@",provinceStr,cityStr,district];
+        self.beginButton.titleLabel.text = district;
+        [self.beginButton setTitle:district forState:UIControlStateNormal];
+    }else{
+        end = [NSString stringWithFormat:@"%@,%@,%@",provinceStr,cityStr,district];
+        self.endButton.titleLabel.text = district;
+        [self.endButton setTitle:district forState:UIControlStateNormal];
+    }
+    
     [self deSelected];
 }
 
 - (void)deSelected{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    CGFloat M = 3.1415;
+    
+    CGAffineTransform transform = CGAffineTransformMakeRotation(0*M);
+    self.beginImageView.transform = transform;
+    self.endImageView.transform = transform;
+    [UIView commitAnimations];
     [self.textField resignFirstResponder];
 }
 
@@ -145,27 +211,52 @@
     self.beginButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         selectButton = self.beginButton;
         [self.textField becomeFirstResponder];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        CGFloat M = 3.1415;
+        
+        CGAffineTransform transform = CGAffineTransformMakeRotation(1*M);
+        CGAffineTransform transform1 = CGAffineTransformMakeRotation(0 * M);
+        self.beginImageView.transform = transform;
+        self.endImageView.transform = transform1;
+        [UIView commitAnimations];
         return [RACSignal empty];
     }];
     
     self.endButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         selectButton = self.endButton;
         [self.textField becomeFirstResponder];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        CGFloat M = 3.1415;
+        
+        CGAffineTransform transform = CGAffineTransformMakeRotation(1*M);
+        CGAffineTransform transform1 = CGAffineTransformMakeRotation(0 * M);
+        self.endImageView.transform = transform;
+        self.beginImageView.transform = transform1;
+        [UIView commitAnimations];
         return [RACSignal empty];
     }];
     
     [RACObserve(self.endButton.titleLabel,text) subscribeNext:^(NSString *value) {
-        self.viewModels = nil;
+        
         if ([value isEqualToString:END_ADDRESS]) {
+            self.viewModels = nil;
             [self getCompanies];
         }else{
-            [self getLines];
+            if (begin == nil) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请选择始发地" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+                [alertView show];
+            }else{
+                self.viewModels = nil;
+                 [self getLines];
+            }
         }
     }];
 }
 
 - (void)getCompanies{
-    RACSignal *signal = [[LinApiManager shareInstance] getCompaniesByDistance:1000 lat:@"123" lng:@"123"];
+    RACSignal *signal = [[LinApiManager shareInstance] getCompaniesByDistance:10000 lat:@"30.732128" lng:@"120.729622"];
     [[[signal filter:^BOOL(LDataResult *dataResult) {
         [MBProgressHUD showTextOnly:dataResult.msg];
         return dataResult.code == ResponseStatusOk && dataResult.datas != nil;
@@ -184,7 +275,7 @@
 }
 
 - (void)getLines{
-    RACSignal *signal = [[LinApiManager shareInstance] getLineByDistance:1000 lat:@"123" lng:@"123" begin:@"河北,邯郸,复兴区" end:@"河北,邯郸,复兴区"];
+    RACSignal *signal = [[LinApiManager shareInstance] getLineByDistance:10000 lat:@"30.732128" lng:@"120.729622" begin:begin end:end];
     [[[signal filter:^BOOL(LDataResult *dataResult) {
         [MBProgressHUD showTextOnly:dataResult.msg];
         return dataResult.code == ResponseStatusOk && dataResult.datas != nil;
@@ -291,6 +382,27 @@
         _textField.inputView = self.addressPicker;
     }
     return _textField;
+}
+
+- (UIImageView*)beginImageView{
+    if (_beginImageView == nil) {
+        _beginImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"choose_icon"]];
+    }
+    return _beginImageView;
+}
+
+- (UIImageView*)endImageView{
+    if (_endImageView == nil) {
+        _endImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"choose_icon"]];
+    }
+    return _endImageView;
+}
+
+- (WDefaultAddress*)defaultAddress{
+    if (_defaultAddress == nil) {
+        _defaultAddress = [WDefaultAddress mj_objectWithKeyValues:[[NSUserDefaults standardUserDefaults] objectForKey:ADDRESS]];
+    }
+    return _defaultAddress;
 }
 
 @end

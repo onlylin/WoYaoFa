@@ -17,4 +17,6 @@
 
 - (RACSignal *)signIn:(NSString*)username password:(NSString*)password;
 
+- (RACSignal *)resetPwd:(WAccount*)account code:(NSString*)code appKey:(NSString*)appkey;
+
 @end

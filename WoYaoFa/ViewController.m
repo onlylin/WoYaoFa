@@ -36,6 +36,8 @@
     [item3 setImage:[UIImage imageNamed:@"my_not_choose"]];
     [item3 setSelectedImage:[UIImage imageNamed:@"my_choose"]];
     [item3 setTitle:@"我的"];
+    
+    self.selectedIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {

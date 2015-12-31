@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "LinBaseRequest.h"
+#import "LinMutipartRequest.h"
 
 @interface LinNetworkAgent : NSObject
 
 + (LinNetworkAgent*)shareInstance;
 
 - (void)addRequest:(LinBaseRequest*)request;
+
+- (void)addMutiRequest:(LinMutipartRequest*)request;
 
 - (void)cancelRequest:(LinBaseRequest*)request;
 

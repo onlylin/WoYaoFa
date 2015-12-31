@@ -16,6 +16,14 @@ target 'WoYaoFa' do
   pod 'YLMoment'
   pod 'BlocksKit'
   pod 'HZActionSheet'
+  pod 'HCSStarRatingView'
+  pod 'MLSelectPhoto'
+  pod 'MLPhotoBrowser'
+  pod 'SDWebImage'
+  pod 'WebViewJavascriptBridge'
+  pod 'AMap2DMap'
+  pod 'AMapSearch'
+  pod 'AMapLocation'
 end
 
 target 'WoYaoFaTests' do

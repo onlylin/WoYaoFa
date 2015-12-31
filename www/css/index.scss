@@ -1,0 +1,114 @@
+@charset "utf-8";
+@import "base.scss";
+@mixin searchCss($marginLP, $marginRP, $marginLC, $marginRC, $color, $borderColor) {
+    margin-left: $marginLP;
+    margin-right: $marginRP;
+    width: 12rem;
+    height: 2.5rem;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    span {
+        display: block;
+        margin-right: $marginRC;
+        margin-left: $marginLC;
+        border: 0.17rem solid $borderColor;
+        border-radius: 0.25rem;
+        color: $color;
+        font-size: 1.36rem;
+        line-height: 2.16rem;
+    }
+}
+#carousel {
+    height: 19rem;
+    width: 30rem;
+    overflow: hidden;
+    background: #f00;
+    ul {
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        li {
+            height: 100%;
+            width: 100%;
+            float: left;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+#item {
+    height: 8.33rem;
+    margin-top: 0.1rem;
+    #item_find_logistics {
+        width: 49.8%;
+        height: 6.25rem;
+        float: left;
+        background: #fff;
+        text-align: center;
+        padding-top: 2rem;
+        img {
+            height: 2.33rem;
+            width: 2.83rem;
+        }
+        p {
+            margin-top: 0.5rem;
+        }
+    }
+    #item_find_express {
+        @extend #item_find_logistics;
+        margin-left: 0.4%;
+    }
+}
+$padding: 10%;
+#search {
+    margin-top: 3rem;
+    height: 2.5rem;
+    width: 100%;
+    #search_logistics {
+        @include searchCss($padding,0,0,35%,#2facff,#2facff);
+    }
+    #search_express {
+        @include searchCss(0,$padding,35%,0,#ababab,$bg);
+    }
+}
+#search_keyword {
+    margin-top: 2.1rem;
+    height: 1.8rem;
+    img {
+        margin-left: $padding;
+        display: block;
+        height: 1.67rem;
+        float: left;
+        width: 5%;
+    }
+    input {
+        margin-right: $padding;
+        margin-left: 2.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        border-bottom: 0.1rem solid #acaaab;
+        width: 70.5%;
+        font-size: 1rem;
+        float: left;
+        height: 1.7rem;
+        line-height: 1.7rem;
+        color: #acaaab;
+        display: block;
+        background: $bg;
+    }
+}
+#submit {
+    margin-left: $padding;
+    margin-right: $padding;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    height: 2.5rem;
+    width: 100% - $padding*2;
+    color: #fff;
+    background: #ff7c34;
+}

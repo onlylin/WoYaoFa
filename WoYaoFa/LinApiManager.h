@@ -28,4 +28,6 @@ typedef NS_ENUM(NSInteger,ResponseStatus) {
 - (void)sendPost:(NSString*)url params:(id)params success:(void(^)(LinBaseRequest *request)) success
         failure:(void(^)(LinBaseRequest *request)) failure;
 
+- (void)uploadImage:(NSString*)url formDatas:(NSArray*)formDatas params:(id)params success:(void(^)(LinBaseRequest *request)) success failure:(void(^)(LinBaseRequest *request)) failure;
+
 @end

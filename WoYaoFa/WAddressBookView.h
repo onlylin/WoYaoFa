@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) UIImageView *defaultImageView;
 
-- (id)initWithFrame:(CGRect)frame viewModel:(WAddressBook*)addressBook;;
+@property (nonatomic, strong) WAddressBook *model;
+
+- (id)initWithFrame:(CGRect)frame;
 
 @end

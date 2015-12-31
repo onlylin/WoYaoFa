@@ -1,0 +1,123 @@
+@charset "utf-8";
+@import "base.scss";
+.subtitle {
+    color: #727272;
+}
+.title_icon {
+    height: 1.25rem;
+    width: 1rem;
+    margin-right: 0.8rem;
+    display: block;
+    float: left;
+}
+.items {
+    background: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+comm_span {
+    span {
+        height: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+#send_info {
+    @extend comm_span;
+}
+#recepte_info {
+    @extend #send_info;
+    margin-top: 0.1rem;
+}
+#tip {
+    margin-top: 0.5rem;
+    * {
+        display: block;
+        float: left;
+    }
+    @extend comm_span;
+}
+#price,
+#express {
+    margin-top: 0.1rem;
+    .info {
+        width: 26rem;
+        float: left;
+        div {
+            padding-top: 0.15rem;
+            padding-bottom: 0.15rem;
+            span {
+                height: 1.2rem;
+                line-height: 1.2rem;
+            }
+        }
+        #freight,
+        #total_price {
+            color: #fc0000;
+        }
+    }
+}
+#logistics {
+    margin-top: 0.5rem;
+    * {
+        display: block;
+        float: left;
+    }
+    @extend comm_span;
+    #state {
+        float: right;
+    }
+}
+#company {
+    margin-top: 0.5rem;
+    margin-bottom:3.8rem;
+    img {
+        height: 5.25rem;
+        width: 5.25rem;
+    }
+    .text {
+        margin-left: 0.5rem;
+        display: block;
+        float: left;
+        width: 20rem;
+        height: 5.25rem;
+        #name {
+            height: 2.75rem;
+            line-height: 2.75rem;
+        }
+    }
+    .arrow_icon {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: block;
+        float: right;
+        height: 1.25rem;
+        width: 0.9rem;
+    }
+    .certificate {
+        width: 4.5rem;
+        height: 1.25rem;
+        margin-right: 1rem;
+    }
+}
+#navButton {
+    width: 100%;
+    height: 3.8rem;
+    position: fixed;
+    bottom: 0;
+    span {
+        display: block;
+        float: left;
+        line-height: 3.8rem;
+        text-align: center;
+        height: 3.8rem;
+        width: 33%;
+        color: #fff;
+        background: #605e5f;
+    }
+    #claim {
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+    }
+}

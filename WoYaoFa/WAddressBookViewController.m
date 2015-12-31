@@ -9,6 +9,7 @@
 #import "WAddressBookViewController.h"
 #import "LinApiManager+AddressBook.h"
 #import "WAddressBookView.h"
+#import "WAddressBookAddViewController.h"
 
 @interface WAddressBookViewController (){
     NSInteger currentPage;
@@ -27,35 +28,46 @@
     {
         self.navigationController.navigationBar.translucent = NO;
     }
-    self.navigationItem.title = @"测试";
+    self.navigationItem.titleView = self.segment;
     
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.addButton];
+    
+    [self addRACSignal];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.left.right.mas_equalTo(0);
+        make.top.left.right.mas_equalTo(0);
+        make.bottom.mas_offset(-40);
     }];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = VIEW_BG;
     
+    [self.addButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_offset(0);
+        make.left.right.mas_offset(0);
+        make.height.mas_equalTo(40);
+    }];
+    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         currentPage = 1;
         [self.viewModels removeAllObjects];
         [self.tableView reloadData];
-        [self getAddressBooks];
+        [self getAddressBooks:self.segment.selectedSegmentIndex];
     }];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         currentPage++;
-        [self getAddressBooks];
+        [self getAddressBooks:self.segment.selectedSegmentIndex];
     }];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     currentPage = 1;
-    [self getAddressBooks];
+    self.segment.selectedSegmentIndex = 0;
+    [self setHidesBottomBarWhenPushed:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,8 +106,18 @@
     return 15;
 }
 
-- (void)getAddressBooks{
-    RACSignal *signal = [[LinApiManager shareInstance] getAddressBooks:1 addressType:1 pageIndex:currentPage pageSize:1];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    WAddressBookView *view = [self.viewModels objectAtIndex:indexPath.section];
+    WAddressBookAddViewController *viewController = [[WAddressBookAddViewController alloc] init];
+    viewController.addressBook = [view model];
+    viewController.addressBookType = self.segment.selectedSegmentIndex;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+#pragma mark - Private Method
+- (void)getAddressBooks:(AddressBookType)type{
+    RACSignal *signal = [[LinApiManager shareInstance] getAddressBooks:1 addressType:type pageIndex:currentPage pageSize:1];
     [[[signal filter:^BOOL(LDataResult *dataResult) {
         [MBProgressHUD showTextOnly:dataResult.msg];
         return dataResult.code == 2000 && dataResult.msg != nil;
@@ -104,13 +126,40 @@
     }] subscribeNext:^(LPageResult *pageResult) {
         NSMutableArray *array = [WAddressBook mj_objectArrayWithKeyValuesArray:pageResult.results];
         for (WAddressBook *addressBook in array) {
-            WAddressBookView *addressBookView = [[WAddressBookView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 112) viewModel:addressBook];
+            WAddressBookView *addressBookView = [[WAddressBookView alloc] initWithFrame:CGRectMake(0, 0, SCREEN.width, 112)];
+            addressBookView.model = addressBook;
             [self.viewModels addObject:addressBookView];
         }
     } completed:^{
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         [self.tableView reloadData];
+    }];
+}
+
+- (void)addRACSignal{
+    [[RACObserve(self.segment, selectedSegmentIndex) filter:^BOOL(NSNumber *index) {
+        return [index integerValue] >= 0;
+    }] subscribeNext:^(NSNumber *index) {
+        self.viewModels = nil;
+        AddressBookType type = [index integerValue];
+        if (type == AddressBookTypeShipper) {
+            [self.addButton setTitle:@"添加发货人地址" forState:UIControlStateNormal];
+        }else if(type == AddressBookTypeReceiver){
+            [self.addButton setTitle:@"添加收货人地址" forState:UIControlStateNormal];
+        }
+        [self getAddressBooks:type];
+    }];
+    
+    [RACObserve(self, viewModels) subscribeNext:^(id x) {
+        [self.tableView reloadData];
+    }];
+    
+    self.addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        WAddressBookAddViewController *viewController = [[WAddressBookAddViewController alloc] init];
+        viewController.addressBookType = self.segment.selectedSegmentIndex;
+        [self.navigationController pushViewController:viewController animated:YES];
+        return [RACSignal empty];
     }];
 }
 /*
@@ -137,6 +186,23 @@
         _viewModels = [[NSMutableArray alloc] init];
     }
     return _viewModels;
+}
+
+- (UIButton*)addButton{
+    if (_addButton == nil) {
+        _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_addButton setTitle:@"添加发货人地址" forState:UIControlStateNormal];
+        [_addButton setBackgroundColor:BUTTON_BG];
+    }
+    return _addButton;
+}
+
+- (UISegmentedControl*)segment{
+    if (_segment == nil) {
+        _segment = [[UISegmentedControl alloc] initWithItems:@[@"收货人",@"发货人"]];
+        _segment.size = CGSizeMake(120, 25);
+    }
+    return _segment;
 }
 
 @end
